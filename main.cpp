@@ -15,6 +15,5 @@ int main(){
     cout << cache.getFile(1) << endl;
     cout << cache.getFile(8) << endl;
 
- 
  return 1;
 }

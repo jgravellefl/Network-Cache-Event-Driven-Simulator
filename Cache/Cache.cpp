@@ -32,7 +32,7 @@ File *DoublyLinkedList::add_file_to_start(int fileId, int value) {
     } else {
         file->next = this->start;
         this->start->prev = file;
-        front = file;
+        this->start = file;
     }
     return file;
 }
@@ -114,13 +114,13 @@ void Cache::insertFile(int fileId, int value) {
 
     File *file = this->fileLinkedList->add_file_to_start(fileId, value);
     this->fileMap[fileId] = file;
-    size++;
+    this->currSize++;
 }
 
 Cache::~Cache() {
     map<int, File*>::iterator iter;
-    for (iter = this->fileMap.begin(); iter != this->fileMap.end()); iter++)  {
+    for (iter = this->fileMap.begin(); iter != this->fileMap.end(); iter++)  {
         delete iter->second;
     }
-    delete this->fileLinkedlist;
+    delete this->fileLinkedList;
 }

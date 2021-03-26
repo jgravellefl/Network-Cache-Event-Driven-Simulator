@@ -1,24 +1,23 @@
 #pragma once
 #include <stdio.h>
 #include <time.h>
+#include <map>
+
 using namespace std;
 
 class File {
-    private:
+    public:
         int fileId, value;
         File *prev, *next;
-        
-    public:
+
     //Create file with id and value
         File(int fileId, int value);
 };
 
 class DoublyLinkedList {
-    private:
+    public:
         File *start, *end;
         bool isEmpty();
-
-    public:
     /*
      * Set up functions to add and move files to head
      * Since it's based off of an LRU Cache System
@@ -30,14 +29,12 @@ class DoublyLinkedList {
         int remove_last_file();
 };
 
-class Cache
-{
-	private:
+class Cache {
+    public:
 		int capacity, currSize;
 		DoublyLinkedList *fileLinkedList;
 		map<int, File*> fileMap;
 
-	public:
 		Cache(int capacity);
 		int getFile(int fileId);
 		void insertFile(int fileId, int value);
