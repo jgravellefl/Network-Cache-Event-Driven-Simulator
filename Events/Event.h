@@ -1,16 +1,18 @@
 #pragma once
 
-#include <stdio.h>
-#include <time.h>
+#include "../Cache/Cache.h"
+#include "../Constants/Constants.h"
 
 class Event
 {
 	private:
-		time_t origTime;
-		time_t execTime;
-		int fileId;
+		
 	public:
-		Event(time_t origTime, time_t nextTime, int fileId);
+		float origTime;
+		float execTime;
+	 int fileId;
+		Constants* constants;
+		Event(float origTime, float nextTime, int fileId, Constants* constants);
 		Event* process();
 		Event();
 };

@@ -3,15 +3,18 @@
 #include <stdio.h>
 #include <time.h>
 #include "Event.h"
+#include "../Cache/Cache.h"
+#include "../Constants/Constants.h"
+#include "FileRequestEvent.h"
+#include "FileEnterQueueEvent.h"
+#include "FileArriveEvent.h"
 
 class FileRequestEvent: public Event
 {
 	private:
-		time_t origTime;
-		time_t execTime;
-		int fileId;
+
 	public:
 	 FileRequestEvent();
-		FileRequestEvent(time_t origTime, time_t nextTime, int fileId);
+		FileRequestEvent(float origTime, float nextTime, int fileId, Constants* constants);
 		Event* process();
 };

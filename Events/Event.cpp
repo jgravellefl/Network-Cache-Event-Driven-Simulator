@@ -1,10 +1,6 @@
 #include "Event.h"
 
-#include <stdio.h>
-#include <time.h>
-#include "Event.h"
-
-Event::Event(time_t origTime, time_t execTime, int fileId){
+Event::Event(float origTime, float execTime, int fileId, Constants* constants){
 	this->origTime = origTime;
 	this->execTime = execTime;
 	this->fileId = fileId;

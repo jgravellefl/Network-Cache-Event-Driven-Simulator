@@ -12,6 +12,7 @@ class File {
 
     //Create file with id and value
         File(int fileId, int value);
+        File();
 };
 
 class DoublyLinkedList {
@@ -39,4 +40,5 @@ class Cache {
 		int getFile(int fileId);
 		void insertFile(int fileId, int value);
 		~Cache();
+        Cache();
 };

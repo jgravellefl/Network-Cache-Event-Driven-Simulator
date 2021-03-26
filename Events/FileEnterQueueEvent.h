@@ -1,17 +1,14 @@
 #pragma once
 
-#include <stdio.h>
-#include <time.h>
 #include "Event.h"
+#include "../Cache/Cache.h"
+#include "FileLeaveQueueEvent.h"
 
 class FileEnterQueueEvent: public Event
 {
-	private:
-		time_t origTime;
-		time_t execTime;
-		int fileId;
+
 	public:
 	 FileEnterQueueEvent();
-		FileEnterQueueEvent(time_t origTime, time_t nextTime, int fileId);
+		FileEnterQueueEvent(float origTime, float nextTime, int fileId, Constants* constants);
 		Event* process();
 };
