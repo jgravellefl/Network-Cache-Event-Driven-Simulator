@@ -2,20 +2,20 @@
 #include <iostream>
 
 FileRequestEvent::FileRequestEvent() : Event(){}
-FileRequestEvent::FileRequestEvent(float origTime, float execTime, int fileId, Constants* constants) : Event(origTime, execTime, fileId, constants){}
+FileRequestEvent::FileRequestEvent(float origTime, float execTime, int fileId, Constants* constants) : Event(origTime, execTime, fileId, constants){
+  std::random_device rd;
+		mt19937 gen(rd());
+  this->generator =  gen;
+		poisson_distribution<int> distribution(this->constants->poissonMean);
+		this->poissonDist = distribution;
+}
 
 void FileRequestEvent::process(Event** returnEvents){
-	cout <<"fileRequest event" << endl;
 	
-	cout << "numRequests: " << this->constants->numRequests << endl;
 	if (this->constants->numRequests > 0){
-		default_random_engine generator;
-  poisson_distribution<int> distribution(this->constants->poissonMean);
-	 int sampleTime = distribution(generator) + this->execTime;
-		cout << sampleTime << endl; 
+	 int sampleTime = this->poissonDist(this->generator) + this->execTime;
 		returnEvents[1] = new FileRequestEvent(sampleTime, sampleTime, this->fileId + 1, this->constants);
 		returnEvents[0] = returnEvents[1];
-		cout << "og fileID: " << returnEvents[0]->fileId << endl;
 		this->constants->numRequests  = this->constants->numRequests -1;
 	}
 }

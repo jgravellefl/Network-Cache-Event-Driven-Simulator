@@ -10,5 +10,6 @@ class FileArriveEvent: public Event
 	public:
 	 FileArriveEvent();
 		FileArriveEvent(float origTime, float nextTime, int fileId, Constants* constants);
-		Event* process();
+		void process(Event** returnEvents);
+		~FileArriveEvent();
 };

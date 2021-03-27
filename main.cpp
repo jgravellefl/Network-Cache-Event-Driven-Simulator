@@ -25,29 +25,22 @@ int main(){
 
     Constants constants = Constants(&cache, 100, 1000, &files, 3, 5);
     Constants* constPtr = &constants;
-    cout << "constants og num of files" << endl;
-    cout << constants.numRequests << endl;
-    cout << constPtr->numRequests << endl;
 
     priority_queue<Event*, std::vector<Event*>, LessThanByTime > pq;
 
     Event* myEvent[2];
     
     Event* event1 = new FileRequestEvent(10, 10, 1, constPtr);
-    //cout << event1.constants->numRequests << endl;
-    //Event* p1 = &event1;
+
     pq.push(event1);
     Event* eventParams[2]; 
 
     while (constants.numRequests > 0 && !pq.empty()){
         Event* currEvent = pq.top();
+        cout << "currentEvent: " << currEvent->fileId << endl;
         pq.pop();
-        cout << "hello" << endl;
-        cout << "asdf" << endl;
-        cout << "fileId " << currEvent->fileId << endl;
         currEvent->process(eventParams);
         delete currEvent;
-        cout << "checking before its put in: " << eventParams[1]->fileId << endl;
         pq.push(eventParams[1]);
     }
     return 1;
