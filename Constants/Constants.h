@@ -6,10 +6,11 @@ class Constants{
  public:
   Cache* cache;
   float fifoBandwidth;
-  float queueBandwidth;
+  float cacheBandwidth;
   FileMap* files;
   int numRequests;
+  float poissonMean;
 
   Constants();
-  Constants(Cache* cache, float fifoBandwidth, float queueBandwidth, FileMap* files, int numRequests);
+  Constants(Cache* cache, float fifoBandwidth, float cacheBandwidth, FileMap* files, int numRequests, float poissonMean);
 };

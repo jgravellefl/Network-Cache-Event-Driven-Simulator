@@ -1,13 +1,12 @@
 #pragma once
 
-#include <stdio.h>
-#include <time.h>
+#include <random>
 #include "Event.h"
 #include "../Cache/Cache.h"
 #include "../Constants/Constants.h"
 #include "FileRequestEvent.h"
-#include "FileEnterQueueEvent.h"
-#include "FileArriveEvent.h"
+//#include "FileEnterQueueEvent.h"
+//#include "FileArriveEvent.h"
 
 class FileRequestEvent: public Event
 {
@@ -16,5 +15,6 @@ class FileRequestEvent: public Event
 	public:
 	 FileRequestEvent();
 		FileRequestEvent(float origTime, float nextTime, int fileId, Constants* constants);
-		Event* process();
+		void process(Event** returnEvents);
+		~FileRequestEvent(){};
 };

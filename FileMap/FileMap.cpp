@@ -5,3 +5,4 @@ FileMap::FileMap(int numFiles, float* fileSizes, float* filePopularities){
  this->fileSizes = fileSizes;
  this->filePopularities = filePopularities;
 }
+FileMap::FileMap(){};

@@ -1,3 +1,5 @@
+#pragma once
+
 class FileMap{
  public:
   int numFiles;

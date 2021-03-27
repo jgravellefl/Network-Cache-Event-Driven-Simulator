@@ -1,2 +1,5 @@
 .idea/
 a.out
+main
+.vscode/settings.json
+main.dSYM/Contents/Info.plist

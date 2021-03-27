@@ -3,9 +3,7 @@
 FileArriveEvent::FileArriveEvent() : Event(){}
 FileArriveEvent::FileArriveEvent(float origTime, float execTime, int fileId, Constants* constants) : Event(origTime, execTime, fileId, constants){}
 
-void FileArriveEvent::process(){
-	Event newEvents[2];
+Event* FileArriveEvent::process(){
 
- Event *p = newEvents;
 	return;
 }
