@@ -23,7 +23,7 @@ int main(){
     
     FileMap files = FileMap();
 
-    Constants constants = Constants(&cache, 100, 1000, &files, 3, 5);
+    Constants constants = Constants(&cache, 100, 1000, &files, 3, 5, 0);
     Constants* constPtr = &constants;
 
     priority_queue<Event*, std::vector<Event*>, LessThanByTime > pq;

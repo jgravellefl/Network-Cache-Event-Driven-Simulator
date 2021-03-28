@@ -16,7 +16,6 @@ int RemoteServer::getFile(int fileId) {
         return -1;
     }
     int currValue = fileMap[fileId]->value;
-
     return currValue;
 }
 
@@ -26,7 +25,7 @@ void RemoteServer::insertFile(int fileId, int value) {
         return;
     }
 
-    File *file = File(fileId, value);
+    File *file = new File(fileId, value);
     this->fileMap[fileId] = file;
     this->currSize++;
 }
