@@ -43,5 +43,5 @@ int main(){
         delete currEvent;
         pq.push(eventParams[1]);
     }
-    return 1;
+    return 0;
 }
