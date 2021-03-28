@@ -10,7 +10,8 @@ class Constants{
   FileMap* files;
   int numRequests;
   float poissonMean;
+  int totalTime;
 
   Constants();
-  Constants(Cache* cache, float fifoBandwidth, float cacheBandwidth, FileMap* files, int numRequests, float poissonMean);
+  Constants(Cache* cache, float fifoBandwidth, float cacheBandwidth, FileMap* files, int numRequests, float poissonMean, int totalTime);
 };
