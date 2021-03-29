@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <map>
+#include "../Cache/Cache.h"
 
 using namespace std;
 
