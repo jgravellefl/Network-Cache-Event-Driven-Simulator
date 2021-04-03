@@ -11,20 +11,21 @@ using namespace std;
 
 int main(){
 
-    RemoteServer remoteServer(400); // Remote Server with propagation time = 400
+    RemoteServer remoteServer(400, 100, 5); // Remote Server with propagation time = 400
 
-    remoteServer.insertFile(1, 1);
+    /*remoteServer.insertFile(1, 1);
     remoteServer.insertFile(1, 5);
     remoteServer.insertFile(2, 23);
     remoteServer.insertFile(5, 7);
     remoteServer.insertFile(8, 19);
 
     cout << "Testing Remote Server Implementation:" << endl;
+    */
 
-    map<int, File*>::iterator iter;
-    for (iter = remoteServer.fileMap.begin(); iter != remoteServer.fileMap.end(); iter++)  {
-        cout << "\tAdded File " << iter->first << ": " << iter->second->value << endl;
-    }
+    // map<int, File*>::iterator iter;
+    // for (iter = remoteServer.fileMap.begin(); iter != remoteServer.fileMap.end(); iter++)  {
+    //     cout << "\tAdded File " << iter->first << ": " << iter->second->value << endl;
+    // }
 
     cout << "\nTesting LRU Cache Implementation:" << endl;
     Cache cache(2);	// cache capacity 2
