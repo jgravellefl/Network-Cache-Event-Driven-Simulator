@@ -1,11 +1,15 @@
 //main loop
 #include <iostream>
-#include "Cache/Cache.h"
 #include <queue>
+#include <stdlib.h>
+#include <chrono>
+#include <ctime>
+#include "Cache/Cache.h"
 #include "Events/Event.h"
 #include "Constants/Constants.h"
 #include "Events/FileRequestEvent.h"
 #include "RemoteServer/RemoteServer.h"
+#include "FileSelection/FileSelection.h"
 
 using namespace std;
 
@@ -25,6 +29,30 @@ int main(){
     for (iter = remoteServer.fileMap.begin(); iter != remoteServer.fileMap.end(); iter++)  {
         cout << "\tAdded File " << iter->first << ": " << iter->second->value << endl;
     }
+
+    cout << "\nTesting File Selector Implementation:\n";
+    int range = 0;
+    FileSelector fileSelector = FileSelector();
+    for (int i = 1; i <= 10000; i++) {
+        int random = rand() % 10 + 1;
+        // This shows insertion
+        // printf("\tFile ID: %d, Min: %d, Max: %d\n", i, fileSelector.nextMin, (fileSelector.nextMin + random));
+        fileSelector.insertFile(i, fileSelector.nextMin, fileSelector.nextMin + random);
+        range += random + 1;
+    }
+    printf("\tInsert ended\n");
+
+    chrono::time_point<std::chrono::system_clock> start = chrono::system_clock::now();
+
+    for (int i = 0; i < 10000; i++) {
+        int random = rand() % (range - 1) + 1;
+        int fileID = fileSelector.getFile(random);
+        // This shows file matched at given input
+        // printf("\tFound File %d with input %d\n", fileID, random);
+    }
+    chrono::time_point<std::chrono::system_clock> end = chrono::system_clock::now();
+    double time = chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    printf("\tTesting get ended\n\tTime elapsed in seconds: %f\n", time/1000);
 
     cout << "\nTesting LRU Cache Implementation:" << endl;
     Cache cache(2);	// cache capacity 2
