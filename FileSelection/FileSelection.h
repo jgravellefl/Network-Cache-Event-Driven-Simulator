@@ -19,9 +19,12 @@ class FileSelector {
 		int currSize, nextMin;
 		map<int, Range*> selectorMap;
 
+
         FileSelector();
+		FileSelector(int numFiles, double paretoScale, double paretoShape);
 		void insertFile(int fileId, int min, int max);
 		int getFile(int probabilityInput);
+		int getFile();
 		~FileSelector();
 		
 };

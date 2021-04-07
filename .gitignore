@@ -5,3 +5,4 @@ main
 main.dSYM/Contents/Info.plist
 .DS_Store
 .DS_Store
+*.o

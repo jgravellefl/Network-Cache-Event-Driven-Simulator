@@ -4,6 +4,9 @@
 #include <map>
 #include "RemoteServer.h"
 #include <random>
+#include <gsl/gsl_rng.h>
+#include <gsl/gsl_randist.h>
+#include <gsl/gsl_rng.h>
 #include "../Cache/Cache.h"
 
 RemoteServer::RemoteServer(int propagationTime) {
@@ -12,11 +15,12 @@ RemoteServer::RemoteServer(int propagationTime) {
     this->fileMap = map<int, File*>();
 }
 
-RemoteServer::RemoteServer(int propagationTime, int size, int sizeMean) {
+RemoteServer::RemoteServer(int propagationTime, int size, double paretoShape, double paretoScale) {
     this->propagationTime = propagationTime;
     this->currSize = size;
     this->fileMap = map<int, File*>();
-    this->sizeMean = sizeMean;
+    this->paretoScale = paretoScale;
+    this->paretoShape = paretoShape;
     this->populateServer();
 }
 
@@ -41,13 +45,15 @@ void RemoteServer::insertFile(int fileId, int value) {
 
 void RemoteServer::populateServer() {
 
-    default_random_engine generator;
-    exponential_distribution<double> distribution(3.5);
+    const gsl_rng_type * T;
+    gsl_rng_env_setup();
+    T = gsl_rng_default;
+    const gsl_rng * r = gsl_rng_alloc (T);
 
     for (int i = 1; i < this->currSize + 1; i++){
-        //File *file = new File(i, distribution(generator));
-        //this->fileMap[i] = file;
-        cout << distribution(generator) << endl;;
+        double randomSample = gsl_ran_pareto(r, this->paretoShape, this->paretoScale);
+        File *file = new File(i, int(randomSample));
+        this->fileMap[i] = file;
     }
 }
 

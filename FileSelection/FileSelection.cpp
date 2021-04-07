@@ -4,6 +4,9 @@
 #include <map>
 #include "FileSelection.h"
 #include "../Cache/Cache.h"
+#include <gsl/gsl_rng.h>
+#include <gsl/gsl_randist.h>
+#include <gsl/gsl_rng.h>
 
 Range::Range(int min, int max) {
     this->min = min;
@@ -22,6 +25,32 @@ FileSelector::FileSelector() {
     this->currSize = 0;
     this->nextMin = 0;
     this->selectorMap = map<int, Range*>();
+}
+
+FileSelector::FileSelector(int numFiles, double paretoShape, double paretoScale){
+    
+    this->currSize = numFiles;
+    this->selectorMap = map<int, Range*>();
+    const gsl_rng_type * T;
+    //may cause issues to call this here and in RemoteServer, will need to monitor
+    gsl_rng_env_setup();      
+    T = gsl_rng_default;
+    const gsl_rng * r = gsl_rng_alloc (T);
+    int popArray[numFiles];
+    int sum = 0;
+    for (int i = 0; i < numFiles; i++){
+        double randomSample = gsl_ran_pareto(r, paretoShape, paretoScale);
+        popArray[i] = int(randomSample);
+        sum += int(randomSample);
+    }
+    int tempSum = 0;
+    for (int i = 0; i < numFiles; i++){
+        int currSum = popArray[i];
+        this->insertFile(i, tempSum, tempSum + currSum);
+        tempSum += currSum + 1;
+    }
+    this->nextMin = tempSum;
+    this->currSize = sum;
 }
 
 void FileSelector::insertFile(int fileId, int min, int max){
@@ -53,6 +82,7 @@ int FileSelector::getFile(int probabilityInput) {
     }
     return fileID;
 }
+
 
 FileSelector::~FileSelector() {
     map<int, Range*>::iterator iter;

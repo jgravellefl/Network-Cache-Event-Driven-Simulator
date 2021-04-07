@@ -15,41 +15,33 @@ using namespace std;
 
 int main(){
 
-    RemoteServer remoteServer(400, 100, 5); // Remote Server with propagation time = 400
+    double paretoMean = 10;
+    double paretoShape = 2.5;
+    double paretoScale = (paretoShape-1.0)/paretoShape * paretoMean;
 
-    /*remoteServer.insertFile(1, 1);
-    remoteServer.insertFile(1, 5);
-    remoteServer.insertFile(2, 23);
-    remoteServer.insertFile(5, 7);
-    remoteServer.insertFile(8, 19);
+    RemoteServer remoteServer(400, 100, paretoShape, paretoScale); // Remote Server with propagation time = 400
+
 
     cout << "Testing Remote Server Implementation:" << endl;
-    */
+    
 
-    // map<int, File*>::iterator iter;
-    // for (iter = remoteServer.fileMap.begin(); iter != remoteServer.fileMap.end(); iter++)  {
-    //     cout << "\tAdded File " << iter->first << ": " << iter->second->value << endl;
-    // }
+     map<int, File*>::iterator iter;
+     for (iter = remoteServer.fileMap.begin(); iter != remoteServer.fileMap.end(); iter++)  {
+         cout << "\tAdded File " << iter->first << ": " << iter->second->value << endl;
+     }
 
     cout << "\nTesting File Selector Implementation:\n";
-    int range = 0;
-    FileSelector fileSelector = FileSelector();
-    for (int i = 1; i <= 10000; i++) {
-        int random = rand() % 10 + 1;
-        // This shows insertion
-        // printf("\tFile ID: %d, Min: %d, Max: %d\n", i, fileSelector.nextMin, (fileSelector.nextMin + random));
-        fileSelector.insertFile(i, fileSelector.nextMin, fileSelector.nextMin + random);
-        range += random + 1;
-    }
+    FileSelector fileSelector = FileSelector(100, paretoShape, paretoScale);
+
     printf("\tInsert ended\n");
 
     chrono::time_point<std::chrono::system_clock> start = chrono::system_clock::now();
-
-    for (int i = 0; i < 10000; i++) {
-        int random = rand() % (range - 1) + 1;
+    srand (time(NULL));
+    for (int i = 0; i < 50; i++) {
+        int random = rand() % (fileSelector.currSize - 1) + 1;
         int fileID = fileSelector.getFile(random);
         // This shows file matched at given input
-        // printf("\tFound File %d with input %d\n", fileID, random);
+        printf("\tFound File %d with input %d\n", fileID, random);
     }
     chrono::time_point<std::chrono::system_clock> end = chrono::system_clock::now();
     double time = chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
