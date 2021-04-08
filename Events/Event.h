@@ -8,12 +8,11 @@ class Event
 	private:
 		
 	public:
-		float origTime;
 		float execTime;
-	 int fileId;
+	 	int fileId;
 		Constants* constants;
-		Event(float origTime, float nextTime, int fileId, Constants* constants);
-		virtual void process(Event** currentEvent){cout << "running event" << endl;return;};
+		Event(float nextTime, int fileId, Constants* constants);
+		virtual int process(Event** currentEvent){cout << "running event" << endl; return 0;};
 		Event();
 		~Event(){};
 };

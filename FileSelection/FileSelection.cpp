@@ -2,6 +2,7 @@
 #include <time.h>
 #include <iostream>
 #include <map>
+#include <random>
 #include "FileSelection.h"
 #include "../Cache/Cache.h"
 #include <gsl/gsl_rng.h>
@@ -51,6 +52,7 @@ FileSelector::FileSelector(int numFiles, double paretoShape, double paretoScale)
     }
     this->nextMin = tempSum;
     this->currSize = sum;
+    srand (time(NULL));
 }
 
 void FileSelector::insertFile(int fileId, int min, int max){
@@ -83,6 +85,22 @@ int FileSelector::getFile(int probabilityInput) {
     return fileID;
 }
 
+int FileSelector::getFile() {
+    int probabilityInput = rand() % (currSize - 1) + 1;
+    map<int, Range*>::iterator iter;
+    iter = this->selectorMap.begin();
+    bool found = false;
+    //Returns -1 if file not found
+    int fileID = -1;
+    while (!false && iter != this->selectorMap.end()) {
+        if (iter->second->withinRange(probabilityInput)) {
+            found = true;
+            fileID = iter->first;
+        }
+        iter++;
+    }
+    return fileID;
+}
 
 FileSelector::~FileSelector() {
     map<int, Range*>::iterator iter;

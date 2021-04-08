@@ -10,7 +10,7 @@ class FileLeaveQueueEvent: public Event
 
 	public:
 	 FileLeaveQueueEvent();
-		FileLeaveQueueEvent(float origTime, float nextTime, int fileId, Constants* constants);
-		void process(Event** returnEvents);
+		FileLeaveQueueEvent(float nextTime, int fileId, Constants* constants);
+		int process(Event** returnEvents);
 		~FileLeaveQueueEvent(){};
 };

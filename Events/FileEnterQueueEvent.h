@@ -9,7 +9,7 @@ class FileEnterQueueEvent: public Event
 
 	public:
 	 FileEnterQueueEvent();
-		FileEnterQueueEvent(float origTime, float nextTime, int fileId, Constants* constants);
-	 void process(Event** returnEvents);
+		FileEnterQueueEvent(float nextTime, int fileId, Constants* constants);
+	 int process(Event** returnEvents);
 		~FileEnterQueueEvent(){};
 };

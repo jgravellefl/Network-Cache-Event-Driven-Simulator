@@ -1,10 +1,19 @@
 #include "FileEnterQueueEvent.h"
 
 FileEnterQueueEvent::FileEnterQueueEvent() : Event(){}
-FileEnterQueueEvent::FileEnterQueueEvent(float origTime, float execTime, int fileId, Constants* constants) : Event(origTime, execTime, fileId, constants){}
+FileEnterQueueEvent::FileEnterQueueEvent(float execTime, int fileId, Constants* constants) : Event(execTime, fileId, constants){}
 
-void FileEnterQueueEvent::process(Event** returnEvents){
-
-	returnEvents[0] = new FileLeaveQueueEvent(this->origTime, this->execTime + 10, this->fileId, this->constants);
- returnEvents[1] = returnEvents[0];
+int FileEnterQueueEvent::process(Event** returnEvents){
+	cout << "file enter queue event" << endl;
+	 cout << "\tfile: " << this->fileId << endl;
+	 cout << "\tExecTime: " << this->execTime << endl; 
+	if (this->constants->remoteServer->fifoQueue.empty()){
+		this->constants->remoteServer->fifoQueue.push(this->fileId);
+		returnEvents[0] = new FileLeaveQueueEvent(this->execTime + (this->constants->remoteServer->getFile(this->fileId))/this->constants->fifoBandwidth, this->fileId, this->constants);
+		return 1;
+	}
+	else{
+		this->constants->remoteServer->fifoQueue.push(this->fileId);
+		return 0;
+	}
 }
