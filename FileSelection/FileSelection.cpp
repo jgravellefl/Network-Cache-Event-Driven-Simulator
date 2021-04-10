@@ -2,6 +2,7 @@
 #include <time.h>
 #include <iostream>
 #include <map>
+#include <sys/time.h>
 #include <random>
 #include "FileSelection.h"
 #include "../Cache/Cache.h"
@@ -34,9 +35,13 @@ FileSelector::FileSelector(int numFiles, double paretoShape, double paretoScale)
     this->selectorMap = map<int, Range*>();
     const gsl_rng_type * T;
     //may cause issues to call this here and in RemoteServer, will need to monitor
-    gsl_rng_env_setup();      
+    gsl_rng_env_setup();
     T = gsl_rng_default;
+    struct timeval tv; // Seed generation based on time
+    gettimeofday(&tv,0);
+    unsigned long mySeed = tv.tv_sec + tv.tv_usec;
     const gsl_rng * r = gsl_rng_alloc (T);
+    gsl_rng_set(r, mySeed);
     int popArray[numFiles];
     int sum = 0;
     for (int i = 0; i < numFiles; i++){

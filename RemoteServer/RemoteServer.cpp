@@ -2,6 +2,7 @@
 #include <time.h>
 #include <iostream>
 #include <map>
+#include <sys/time.h>
 #include "RemoteServer.h"
 #include <random>
 #include <gsl/gsl_rng.h>
@@ -48,7 +49,11 @@ void RemoteServer::populateServer() {
     const gsl_rng_type * T;
     gsl_rng_env_setup();
     T = gsl_rng_default;
+    struct timeval tv; // Seed generation based on time
+    gettimeofday(&tv,0);
+    unsigned long mySeed = tv.tv_sec + tv.tv_usec;
     const gsl_rng * r = gsl_rng_alloc (T);
+    gsl_rng_set(r, mySeed);
 
     for (int i = 1; i < this->currSize + 1; i++){
         double randomSample = gsl_ran_pareto(r, this->paretoShape, this->paretoScale);
