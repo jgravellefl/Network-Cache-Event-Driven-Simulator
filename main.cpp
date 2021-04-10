@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <chrono>
 #include <ctime>
+#include <string>
+#include <fstream>
 #include "Cache/Cache.h"
 #include "Events/Event.h"
 #include "Constants/Constants.h"
@@ -15,17 +17,37 @@ using namespace std;
 
 int main(){
 
-    double paretoMean = 10;
-    double paretoShape = 2.5;
+
+    string line;
+    string fileInput[9];
+    std::ifstream myfile ("input.txt");
+    string delimiter = "= ";
+    int i = 0;
+    if (myfile.is_open())
+    {
+        while ( getline (myfile,line) )
+        {
+            string parsedInput = line.substr(line.find(delimiter) +2, line.length());
+            fileInput[i] = parsedInput;
+            cout << parsedInput << endl;
+            i++;
+        }
+        myfile.close();
+    }
+
+    else cout << "Unable to open file";
+
+    double paretoMean = stod(fileInput[0]);
+    double paretoShape = stod(fileInput[1]);
     double paretoScale = (paretoShape-1.0)/paretoShape * paretoMean;
-    int cacheCapacity = 20;
-    int numFiles = 40;
-    int numRequests = 100;
-    int propagationTime = 4;
+    int cacheCapacity = stoi(fileInput[2]);
+    int numFiles = stoi(fileInput[3]);
+    int numRequests = stoi(fileInput[4]);
+    int propagationTime = stoi(fileInput[5]);
     int initRequests = numRequests;
-    int cacheBandwidth = 5;
-    int fifoBandwidth = 2;
-    int poissonMean = 5;
+    int cacheBandwidth = stoi(fileInput[6]);
+    int fifoBandwidth = stoi(fileInput[7]);
+    int poissonMean = stoi(fileInput[8]);
 
     RemoteServer* remoteServer = new RemoteServer(propagationTime, numFiles, paretoShape, paretoScale); // Remote Server with propagation time = 400
     std::cout << "files" << endl;

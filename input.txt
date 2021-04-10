@@ -1,0 +1,9 @@
+paretoMean = 10
+paretoShape = 2.5
+cacheCapacity = 20
+numFiles = 40
+numRequests = 100
+propagationTime = 4
+cacheBandwidth = 5
+fifoBandwidth = 2
+poissonMean = 5
