@@ -2,7 +2,7 @@
 #include <time.h>
 #include <iostream>
 #include <map>
-#include "Cache.h"
+#include "LRUCache.h"
 
 File::File(int fileId, int value){
 	this->fileId = fileId;
@@ -82,14 +82,14 @@ int DoublyLinkedList::remove_last_file() {
     return lastFileId;
 }
 
-Cache::Cache(int capacity) {
+LRUCache::LRUCache(int capacity) {
     this->capacity = capacity;
     this->currSize = 0;
     this->fileLinkedList = new DoublyLinkedList();
     this->fileMap = map<int, File*>();
 }
 
-int Cache::getFile(int fileId) {
+int LRUCache::getFile(int fileId) {
     if (this->fileMap.find(fileId) == this->fileMap.end()) {
         return -1;
     }
@@ -99,7 +99,7 @@ int Cache::getFile(int fileId) {
     return currValue;
 }
 
-void Cache::insertFile(int fileId, int value) {
+void LRUCache::insertFile(int fileId, int value) {
     if (this->fileMap.find(fileId) != this->fileMap.end()) {
         this->fileMap[fileId]->value = value;
         this->fileLinkedList->move_file_to_start(this->fileMap[fileId]);
@@ -117,7 +117,7 @@ void Cache::insertFile(int fileId, int value) {
     this->currSize++;
 }
 
-Cache::~Cache() {
+LRUCache::~LRUCache() {
     map<int, File*>::iterator iter;
     for (iter = this->fileMap.begin(); iter != this->fileMap.end(); iter++)  {
         delete iter->second;

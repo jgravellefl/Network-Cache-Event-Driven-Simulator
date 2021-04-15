@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Event.h"
-#include "../Cache/Cache.h"
+#include "../LRUCache/LRUCache.h"
 #include "FileLeaveQueueEvent.h"
 
 class FileEnterQueueEvent: public Event

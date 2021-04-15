@@ -4,7 +4,8 @@
 #include <stdlib.h>
 #include <chrono>
 #include <ctime>
-#include "Cache/Cache.h"
+#include "LRUCache/LRUCache.h"
+#include "FIFOCache/FIFOCache.h"
 #include "Events/Event.h"
 #include "Constants/Constants.h"
 #include "Events/FileRequestEvent.h"
@@ -35,9 +36,13 @@ int main(){
 
     FileSelector* fileSelector = new FileSelector(numFiles, paretoShape, paretoScale);
 
-    Cache* cache = new Cache(cacheCapacity);	// cache capacity 2
+    LRUCache* LRU_Cache = new LRUCache(cacheCapacity);	// cache capacity 2
 
-    Constants* constants = new Constants(cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+    // TESTING
+    FIFOCache* FIFO_Cache = new FIFOCache(3);  // cache capacity 3
+
+    // Add FIFO
+    Constants* constants = new Constants(LRU_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
 
     priority_queue<Event*, std::vector<Event*>, LessThanByTime > pq;
     
@@ -67,5 +72,15 @@ int main(){
     cout << "final time: " << constants->totalTime << endl;
     float avgTime = constants->totalTime/initRequests;
     cout << "avg time: " << avgTime << endl;
+
+    // TESTING
+    FIFO_Cache->insertFile(1, 5);
+    FIFO_Cache->insertFile(2, 6);
+    FIFO_Cache->insertFile(5, 2);
+    FIFO_Cache->insertFile(1, 3);
+    cout << "File 1: " << FIFO_Cache->getFile(1) << endl;
+    FIFO_Cache->insertFile(3, 7);
+    cout << "File 1: " << FIFO_Cache->getFile(1) << endl;
+    cout << "File 5: " << FIFO_Cache->getFile(5) << endl;
     return 0;
 }

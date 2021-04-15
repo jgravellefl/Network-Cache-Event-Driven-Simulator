@@ -17,7 +17,7 @@ int FileRequestEvent::process(Event** returnEvents){
 	if (this->constants->numRequests > 1){
 	 	int sampleTime = this->poissonDist(this->generator) + this->execTime;
 		returnEvents[0] = new FileRequestEvent(sampleTime, this->constants->fileSelector->getFile(), this->constants);
-		if (this->constants->cache->getFile(this->fileId) != -1){
+		if (this->constants->LRUcache->getFile(this->fileId) != -1){
 			returnEvents[1] = new FileArriveEvent(this->execTime + (this->constants->remoteServer->getFile(this->fileId)/this->constants->cacheBandwidth),this->fileId ,this->constants);
 		}
 		else{
@@ -35,7 +35,7 @@ int FileRequestEvent::process(Event** returnEvents){
 	}
 	else {
 		int sampleTime = this->poissonDist(this->generator) + this->execTime;
-		if (this->constants->cache->getFile(this->fileId) != -1){
+		if (this->constants->LRUcache->getFile(this->fileId) != -1){
 			returnEvents[0] = new FileArriveEvent(this->execTime + (this->constants->remoteServer->getFile(this->fileId)/this->constants->cacheBandwidth),this->fileId ,this->constants);
 		}
 		else{
