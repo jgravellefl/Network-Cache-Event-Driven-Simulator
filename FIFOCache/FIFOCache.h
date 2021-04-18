@@ -4,10 +4,11 @@
 #include <map>
 #include <deque>
 #include "../LRUCache/LRUCache.h"
+#include "../Cache/Cache.h"
 
 using namespace std;
 
-class FIFOCache {
+class FIFOCache : public Cache {
     public:
 		int capacity, currSize;
         deque<int> fileDeque;
