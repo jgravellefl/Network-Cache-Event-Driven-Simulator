@@ -4,6 +4,7 @@
 #include <map>
 #include <deque>
 #include "../LRUCache/LRUCache.h"
+#include "../Cache/Cache.h"
 
 using namespace std;
 
@@ -13,10 +14,9 @@ class SecondChanceFile {
 
     //Create file with id and value
         SecondChanceFile(int fileId, int value);
-        SecondChanceFile();
 };
 
-class SecondChanceCache {
+class SecondChanceCache : public Cache {
     public:
 		int capacity, currSize;
         deque<int> fileDeque;
@@ -26,5 +26,4 @@ class SecondChanceCache {
 		int getFile(int fileId);
 		void insertFile(int fileId, int value);
 		~SecondChanceCache();
-        SecondChanceCache();
 };

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <chrono>
 #include <ctime>
+#include "Cache/Cache.h"
 #include "LRUCache/LRUCache.h"
 #include "FIFOCache/FIFOCache.h"
 #include "SecondChanceCache/SecondChanceCache.h"
@@ -97,5 +98,25 @@ int main(){
     cout << "Get File 1: " << SecondChance_Cache->getFile(1) << endl;
     cout << "Get File 2: " << SecondChance_Cache->getFile(2) << endl;
     cout << "Get File 5: " << SecondChance_Cache->getFile(5) << endl;
+
+    int test = 3;
+    Cache* _Cache = NULL;
+    string temp = "";
+    if (test == 1){
+        temp = "FIFO";
+        _Cache = new FIFOCache(3);	// cache capacity 2
+    } else if (test == 2) {
+        temp = "Second Chance";
+        _Cache = new SecondChanceCache(3);
+    } else if (test == 3) {
+        temp = "LRU Chance";
+        _Cache = new LRUCache(3);
+    }
+
+    cout << "before" << endl;
+    _Cache->insertFile(1, 5);
+    cout << temp << " Get File 1: " << _Cache->getFile(1) << endl;
+    cout << "end" << endl;
+
     return 0;
 }
