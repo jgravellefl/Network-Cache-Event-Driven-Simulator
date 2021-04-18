@@ -14,7 +14,8 @@ class Constants{
   int numRequests;
   float poissonMean;
   float totalTime;
+  int cacheMisses;
 
   Constants();
-  Constants(Cache* LRUcache, float fifoBandwidth, float cacheBandwidth, RemoteServer* remoteServer, FileSelector* fileSelector, int numRequests, float poissonMean, float totalTime);
+  Constants(Cache* LRUcache, float fifoBandwidth, float cacheBandwidth, RemoteServer* remoteServer, FileSelector* fileSelector, int numRequests, float poissonMean, float totalTime, int cacheMisses);
 };
