@@ -10,10 +10,10 @@ using namespace std;
 
 class SecondChanceFile {
     public:
-        int fileId, value, rBit;
+        int fileId, fileSize, rBit;
 
-    //Create file with id and value
-        SecondChanceFile(int fileId, int value);
+    //Create file with id and fileSize
+        SecondChanceFile(int fileId, int fileSize);
 };
 
 class SecondChanceCache : public Cache {
@@ -24,6 +24,6 @@ class SecondChanceCache : public Cache {
 
 		SecondChanceCache(int capacity);
 		int getFile(int fileId);
-		void insertFile(int fileId, int value);
+		void insertFile(int fileId, int fileSize);
 		~SecondChanceCache();
 };

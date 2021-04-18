@@ -47,8 +47,6 @@ float runEvents(Constants* constants, string name, int initRequests){
     cout << "avg time: " << avgTime << endl;
     cout << endl;
     cout << endl;
-    cout << endl;
-    cout << endl;
     return avgTime;
 }
 
@@ -85,52 +83,50 @@ int main(){
     int poissonMean = stoi(fileInput[8]);
     string cacheType = fileInput[10];
 
-    RemoteServer* remoteServer = new RemoteServer(propagationTime, numFiles, paretoShape, paretoScale); // Remote Server with propagation time = 400
 
-    FileSelector* fileSelector = new FileSelector(numFiles, paretoShape, paretoScale);
+    RemoteServer* remoteServer = new RemoteServer(propagationTime, numFiles, paretoShape, paretoScale, cacheCapacity); // Remote Server with propagation time = 400
     
-    cout << "testing files: " << endl;
-   /* for (int i = 1; i < numFiles + 1; i++){
-        cout << "file " << i << ": size - " << remoteServer->getFile(i) << endl;
-    }*/
+    FileSelector* fileSelector = new FileSelector(numFiles, paretoShape, paretoScale);
+
 
     Cache* _Cache = NULL;
     float avg = 0;
     if (cacheType.compare("ALL") == 0){
-        _Cache = new LRUCache(cacheCapacity);
-        Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
-        avg = runEvents(ourConstants, "LRU", numRequests);
-        avg += runEvents(ourConstants, "LRU", numRequests);
-        avg += runEvents(ourConstants, "LRU", numRequests);
-        cout << "average of LRU time's: " << avg/3 << endl;
+        for (int i = 0; i < 5; i++) {
+            _Cache = new LRUCache(cacheCapacity);
+            Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+            avg += runEvents(ourConstants, "LRU", numRequests);
+            delete ourConstants;
+            // _Cache->~Cache();
+            delete _Cache;
+        }
+        cout << "average of LRU time's: " << avg/5 << endl;
         cout << endl;
         cout << endl;
+        avg = 0;
+        for (int i = 0; i < 5; i++) {
+            _Cache = new FIFOCache(cacheCapacity);
+            Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+            avg += runEvents(ourConstants, "FIFO", numRequests);
+            delete ourConstants;
+            // _Cache->~Cache();
+            delete _Cache;
+        }
+        cout << "average of FIFO time's: " << avg/5 << endl;
         cout << endl;
         cout << endl;
-        delete ourConstants;
-        _Cache = new FIFOCache(cacheCapacity);
-        ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
-        avg = runEvents(ourConstants, "FIFO", numRequests);
-        avg += runEvents(ourConstants, "FIFO", numRequests);
-        avg += runEvents(ourConstants, "FIFO", numRequests);
-        cout << "average of FIFO time's: " << avg/3 << endl;
-        cout << endl;
-        cout << endl;
-        cout << endl;
-        cout << endl;
-        delete ourConstants;
+        avg = 0;
+        for (int i = 0; i < 5; i++) {
         _Cache = new SecondChanceCache(cacheCapacity);
-        ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
-        avg = runEvents(ourConstants, "SecondChance", numRequests);
-        avg += runEvents(ourConstants, "SecondChance", numRequests);
-        avg += runEvents(ourConstants, "SecondChance", numRequests);
-        cout << "average of SecondChance time's: " << avg/3 << endl;
+            Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+            avg += runEvents(ourConstants, "SecondChance", numRequests);
+            delete ourConstants;
+            // _Cache->~Cache();
+            delete _Cache;
+        }
+        cout << "average of SecondChance time's: " << avg/5 << endl;
         cout << endl;
-        cout << endl;
-        cout << endl;
-        cout << endl;
-        delete ourConstants;
-        
+        cout << endl;        
     }
     else {
         string name = "";

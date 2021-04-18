@@ -4,9 +4,9 @@
 #include <map>
 #include "LRUCache.h"
 
-File::File(int fileId, int value){
+File::File(int fileId, int fileSize){
 	this->fileId = fileId;
-	this->value = value;
+	this->fileSize = fileSize;
 	this->prev = nullptr;
     this->next = nullptr;
 }
@@ -21,8 +21,8 @@ DoublyLinkedList::DoublyLinkedList() {
     this->end = nullptr;
 }
 
-File *DoublyLinkedList::add_file_to_start(int fileId, int value) {
-    File *file = new File(fileId, value);
+File *DoublyLinkedList::add_file_to_start(int fileId, int fileSize) {
+    File *file = new File(fileId, fileSize);
 
     //If linked list is empty
     //Try using isEmpty()
@@ -93,31 +93,33 @@ int LRUCache::getFile(int fileId) {
     if (this->fileMap.find(fileId) == this->fileMap.end()) {
         return -1;
     }
-    int currValue = fileMap[fileId]->value;
+    int currfileSize = fileMap[fileId]->fileSize;
     fileLinkedList->move_file_to_start(fileMap[fileId]);
 
-    return currValue;
+    return currfileSize;
 }
 
-void LRUCache::insertFile(int fileId, int value) {
+void LRUCache::insertFile(int fileId, int fileSize) {
     if (this->fileMap.find(fileId) != this->fileMap.end()) {
-        this->fileMap[fileId]->value = value;
+        this->fileMap[fileId]->fileSize = fileSize;
         this->fileLinkedList->move_file_to_start(this->fileMap[fileId]);
         return;
     }
 
     //If the current size reached capacity, remove the LRU file
-    if (this->currSize == this->capacity) {
+    while (this->currSize + fileSize > this->capacity) {
+        int tempFileSize = this->fileLinkedList->end->fileSize;
         this->fileMap.erase(this->fileLinkedList->remove_last_file());
-        this->currSize--;
+        this->currSize  = this->currSize - tempFileSize;
     }
 
-    File *file = this->fileLinkedList->add_file_to_start(fileId, value);
+    File *file = this->fileLinkedList->add_file_to_start(fileId, fileSize);
     this->fileMap[fileId] = file;
-    this->currSize++;
+    this->currSize += file->fileSize;
 }
 
 LRUCache::~LRUCache() {
+    // cout << " child " << endl;
     map<int, File*>::iterator iter;
     for (iter = this->fileMap.begin(); iter != this->fileMap.end(); iter++)  {
         delete iter->second;

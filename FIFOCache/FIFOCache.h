@@ -17,7 +17,7 @@ class FIFOCache : public Cache {
 		FIFOCache(int capacity);
         int remove_last_file();
 		int getFile(int fileId);
-		void insertFile(int fileId, int value);
+		void insertFile(int fileId, int fileSize);
 		~FIFOCache();
         FIFOCache();
 };
