@@ -2,7 +2,7 @@
 
 #include <random>
 #include "Event.h"
-#include "../LRUCache/LRUCache.h"
+#include "../Cache/Cache.h"
 #include <iostream>
 #include "../Constants/Constants.h"
 #include "FileRequestEvent.h"
@@ -18,7 +18,7 @@ class FileRequestEvent: public Event
   poisson_distribution<int> poissonDist;
 		mt19937 generator;
 	 FileRequestEvent();
-		FileRequestEvent(float nextTime, int fileId, Constants* constants);
+		FileRequestEvent(float initTime, float nextTime, int fileId, Constants* constants);
 		int process(Event** returnEvents);
 		~FileRequestEvent(){};
 };

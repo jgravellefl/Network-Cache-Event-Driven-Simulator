@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <chrono>
 #include <ctime>
+#include <string>
+#include <fstream>
 #include "Cache/Cache.h"
 #include "LRUCache/LRUCache.h"
 #include "FIFOCache/FIFOCache.h"
@@ -16,107 +18,141 @@
 
 using namespace std;
 
-int main(){
 
-    double paretoMean = 10;
-    double paretoShape = 2.5;
-    double paretoScale = (paretoShape-1.0)/paretoShape * paretoMean;
-    int cacheCapacity = 20;
-    int numFiles = 40;
-    int numRequests = 100;
-    int propagationTime = 4;
-    int initRequests = numRequests;
-    int cacheBandwidth = 5;
-    int fifoBandwidth = 2;
-    int poissonMean = 5;
-
-    RemoteServer* remoteServer = new RemoteServer(propagationTime, numFiles, paretoShape, paretoScale); // Remote Server with propagation time = 400
-    std::cout << "files" << endl;
-    for (int i = 1; i < remoteServer->fileMap.size() + 1; i ++){
-        std::cout << "file " << i << ": " << remoteServer->getFile(i) << endl;
-    }
-
-    FileSelector* fileSelector = new FileSelector(numFiles, paretoShape, paretoScale);
-
-    LRUCache* LRU_Cache = new LRUCache(cacheCapacity);	// cache capacity 2
-
-    // TESTING
-    FIFOCache* FIFO_Cache = new FIFOCache(3);  // cache capacity 3
-
-    SecondChanceCache* SecondChance_Cache = new SecondChanceCache(3);
-
-    // Add FIFO
-    Constants* constants = new Constants(LRU_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+float runEvents(Constants* constants, string name, int initRequests){
 
     priority_queue<Event*, std::vector<Event*>, LessThanByTime > pq;
     
-    Event* event1 = new FileRequestEvent(0, 2, constants);
+    Event* event1 = new FileRequestEvent(0, 0,  constants->fileSelector->getFile(), constants);
 
     pq.push(event1);
     Event* eventParams[2] = {NULL}; 
     int returnNum;
 
-    std::cout << "Testing processing events framework:" << endl;
     while (!pq.empty()){
         Event* currEvent = pq.top();
-        cout <<"in main" << endl;
         pq.pop();
         returnNum = currEvent->process(eventParams);
-        cout << "return value:  " << returnNum << endl;
         delete currEvent;
         if (returnNum > 0){
-            cout <<  "pushing: " << eventParams[0] << endl;
             pq.push(eventParams[0]);
         }
         if (returnNum > 1){
-            cout <<  "pushing: " << eventParams[1] << endl;
             pq.push(eventParams[1]);
         }
     }
+    cout << "Running: " << name << endl;
     cout << "final time: " << constants->totalTime << endl;
     float avgTime = constants->totalTime/initRequests;
     cout << "avg time: " << avgTime << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    return avgTime;
+}
 
-    // TESTING
-    cout << "\nTesting FIFO" << endl;
-    FIFO_Cache->insertFile(1, 5);
-    FIFO_Cache->insertFile(2, 6);
-    FIFO_Cache->insertFile(5, 2);
-    FIFO_Cache->insertFile(1, 3);
-    cout << "Get File 1: " << FIFO_Cache->getFile(1) << endl;
-    FIFO_Cache->insertFile(3, 7);
-    cout << "Get File 1: " << FIFO_Cache->getFile(1) << endl;
-    cout << "Get File 5: " << FIFO_Cache->getFile(5) << endl;
+int main(){
 
-    cout << "\nTesting SecondChance" << endl;
-    SecondChance_Cache->insertFile(1, 5);
-    SecondChance_Cache->insertFile(2, 6);
-    SecondChance_Cache->insertFile(5, 2);
-    SecondChance_Cache->insertFile(1, 3);
-    cout << "Get File 1: " << SecondChance_Cache->getFile(1) << endl;
-    SecondChance_Cache->insertFile(3, 7);
-    cout << "Get File 1: " << SecondChance_Cache->getFile(1) << endl;
-    cout << "Get File 2: " << SecondChance_Cache->getFile(2) << endl;
-    cout << "Get File 5: " << SecondChance_Cache->getFile(5) << endl;
-
-    int test = 3;
-    Cache* _Cache = NULL;
-    string temp = "";
-    if (test == 1){
-        temp = "FIFO";
-        _Cache = new FIFOCache(3);	// cache capacity 2
-    } else if (test == 2) {
-        temp = "Second Chance";
-        _Cache = new SecondChanceCache(3);
-    } else if (test == 3) {
-        temp = "LRU Chance";
-        _Cache = new LRUCache(3);
+    string line;
+    string fileInput[11];
+    std::ifstream myfile ("input.txt");
+    string delimiter = "= ";
+    int i = 0;
+    if (myfile.is_open())
+    {
+        while ( getline (myfile,line) )
+        {
+            string parsedInput = line.substr(line.find(delimiter) +2, line.length());
+            fileInput[i] = parsedInput;
+            i++;
+        }
+        myfile.close();
     }
 
-    cout << "before" << endl;
-    _Cache->insertFile(1, 5);
-    cout << temp << " Get File 1: " << _Cache->getFile(1) << endl;
-    cout << "end" << endl;
+    else cout << "Unable to open file";
 
+    double paretoMean = stod(fileInput[0]);
+    double paretoShape = stod(fileInput[1]);
+    double paretoScale = (paretoShape-1.0)/paretoShape * paretoMean;
+    int cacheCapacity = stoi(fileInput[2]);
+    int numFiles = stoi(fileInput[3]);
+    int numRequests = stoi(fileInput[4]);
+    int propagationTime = stoi(fileInput[5]);
+    int initRequests = numRequests;
+    int cacheBandwidth = stoi(fileInput[6]);
+    int fifoBandwidth = stoi(fileInput[7]);
+    int poissonMean = stoi(fileInput[8]);
+    string cacheType = fileInput[10];
+
+    RemoteServer* remoteServer = new RemoteServer(propagationTime, numFiles, paretoShape, paretoScale); // Remote Server with propagation time = 400
+
+    FileSelector* fileSelector = new FileSelector(numFiles, paretoShape, paretoScale);
+    
+    cout << "testing files: " << endl;
+   /* for (int i = 1; i < numFiles + 1; i++){
+        cout << "file " << i << ": size - " << remoteServer->getFile(i) << endl;
+    }*/
+
+    Cache* _Cache = NULL;
+    float avg = 0;
+    if (cacheType.compare("ALL") == 0){
+        _Cache = new LRUCache(cacheCapacity);
+        Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+        avg = runEvents(ourConstants, "LRU", numRequests);
+        avg += runEvents(ourConstants, "LRU", numRequests);
+        avg += runEvents(ourConstants, "LRU", numRequests);
+        cout << "average of LRU time's: " << avg/3 << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        delete ourConstants;
+        _Cache = new FIFOCache(cacheCapacity);
+        ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+        avg = runEvents(ourConstants, "FIFO", numRequests);
+        avg += runEvents(ourConstants, "FIFO", numRequests);
+        avg += runEvents(ourConstants, "FIFO", numRequests);
+        cout << "average of FIFO time's: " << avg/3 << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        delete ourConstants;
+        _Cache = new SecondChanceCache(cacheCapacity);
+        ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+        avg = runEvents(ourConstants, "SecondChance", numRequests);
+        avg += runEvents(ourConstants, "SecondChance", numRequests);
+        avg += runEvents(ourConstants, "SecondChance", numRequests);
+        cout << "average of SecondChance time's: " << avg/3 << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        delete ourConstants;
+        
+    }
+    else {
+        string name = "";
+        if (cacheType.compare("LRU") == 0){
+            _Cache = new LRUCache(cacheCapacity);
+            name = "LRU";
+        }
+        else if (cacheType.compare("FIFO") == 0){
+            _Cache = new FIFOCache(cacheCapacity);
+            name = "FIFO";
+        }
+        else if (cacheType.compare("SECOND-CHANCE") == 0){
+            _Cache = new SecondChanceCache(cacheCapacity);
+            name = "Second chance";
+        }
+        else{
+            cout << "incorrect cache-type parameter" << endl;
+        }
+        Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+        cout << name << endl;
+        runEvents(ourConstants, name, numRequests);
+        delete ourConstants;
+    }
     return 0;
 }

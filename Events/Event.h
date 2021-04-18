@@ -10,8 +10,9 @@ class Event
 	public:
 		float execTime;
 	 	int fileId;
+		float initTime;
 		Constants* constants;
-		Event(float nextTime, int fileId, Constants* constants);
+		Event(float initTime, float nextTime,int fileId, Constants* constants);
 		virtual int process(Event** currentEvent){cout << "running event" << endl; return 0;};
 		Event();
 		~Event(){};

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../LRUCache/LRUCache.h"
+#include "../Cache/Cache.h"
 #include "Event.h"
 #include "FileArriveEvent.h"
 
@@ -10,7 +10,7 @@ class FileLeaveQueueEvent: public Event
 
 	public:
 	 FileLeaveQueueEvent();
-		FileLeaveQueueEvent(float nextTime, int fileId, Constants* constants);
+		FileLeaveQueueEvent(float initTime, float nextTime, int fileId, Constants* constants);
 		int process(Event** returnEvents);
 		~FileLeaveQueueEvent(){};
 };

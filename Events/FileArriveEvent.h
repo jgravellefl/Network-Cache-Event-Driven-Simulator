@@ -9,7 +9,7 @@ class FileArriveEvent: public Event
 
 	public:
 	 FileArriveEvent();
-		FileArriveEvent(float nextTime, int fileId, Constants* constants);
+		FileArriveEvent(float initTime, float nextTime, int fileId, Constants* constants);
 		int process(Event** returnEvents);
 		~FileArriveEvent();
 };

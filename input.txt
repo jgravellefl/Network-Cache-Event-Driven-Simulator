@@ -1,0 +1,11 @@
+paretoMean = 1000
+paretoShape = 2.0
+cacheCapacity (changeable) = 250
+numFiles = 10000
+numRequests (changeable) = 100000
+propagationTime = 400
+cacheBandwidth = 1000
+fifoBandwidth = 15
+poissonMean (changeable) = 80
+//options = ALL, SECOND-CHANCE, FIFO, LRU.
+type = ALL
