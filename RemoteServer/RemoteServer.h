@@ -18,9 +18,9 @@ class RemoteServer {
 		std::set<int> queuePop;
 
         RemoteServer(int propagationTime);
-		RemoteServer(int propagationTime, int size, double paretoShape, double paretoScale);
+		RemoteServer(int propagationTime, int size, double paretoShape, double paretoScale, int cacheSize);
 		int getFile(int fileId);
-		void populateServer();
-		void insertFile(int fileId, int value);
+		void populateServer(int cacheSize);
+		void insertFile(int fileId, int fileSize);
 		~RemoteServer();
 };

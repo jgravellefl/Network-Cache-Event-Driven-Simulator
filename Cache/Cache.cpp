@@ -14,7 +14,7 @@ Cache::Cache() {
 }
 
 Cache::~Cache() {
-    cout << "remove cache" << endl;
+    // cout << "remove cache" << endl;
 }
 
 void Cache::insertFile(int fileId, int value) {

@@ -5,9 +5,9 @@
 #include <deque>
 #include "SecondChanceCache.h"
 
-SecondChanceFile::SecondChanceFile(int fileId, int value){
+SecondChanceFile::SecondChanceFile(int fileId, int fileSize){
 	this->fileId = fileId;
-	this->value = value;
+	this->fileSize = fileSize;
 	this->rBit = 0;
 }
 
@@ -22,19 +22,19 @@ int SecondChanceCache::getFile(int fileId) {
     if (this->fileMap.find(fileId) == this->fileMap.end()) {
         return -1;
     }
-    int currValue = fileMap[fileId]->value;
+    int currfileSize = fileMap[fileId]->fileSize;
     fileMap[fileId]->rBit = 1;
-    return currValue;
+    return currfileSize;
 }
 
-void SecondChanceCache::insertFile(int fileId, int value) {
+void SecondChanceCache::insertFile(int fileId, int fileSize) {
     if (this->fileMap.find(fileId) != this->fileMap.end()) {
-        this->fileMap[fileId]->value = value;
+        this->fileMap[fileId]->fileSize = fileSize;
         return;
     }
 
     //If the current size reached capacity, remove the first in file
-    if (this->currSize == this->capacity) {
+    while (this->currSize + fileSize > this->capacity) {
         bool notFound = true;
         while (notFound) {
             int currFileId = this->fileDeque.front();
@@ -44,17 +44,18 @@ void SecondChanceCache::insertFile(int fileId, int value) {
                 this->fileDeque.push_back(currFileId);
             } else {
                 notFound = false;
+                int tempFileSize = this->fileMap[currFileId]->fileSize;
                 this->fileMap.erase(currFileId);
                 this->fileDeque.pop_front();
-                this->currSize--;
+                this->currSize -= tempFileSize;
             }
         }
     }
 
-    SecondChanceFile *file = new SecondChanceFile(fileId, value);
+    SecondChanceFile *file = new SecondChanceFile(fileId, fileSize);
     this->fileMap[fileId] = file;
     this->fileDeque.push_back(fileId);
-    this->currSize++;
+    this->currSize += fileSize;
 }
 
 SecondChanceCache::~SecondChanceCache() {

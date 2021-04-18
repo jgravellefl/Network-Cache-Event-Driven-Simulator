@@ -8,11 +8,11 @@ using namespace std;
 
 class File {
     public:
-        int fileId, value;
+        int fileId, fileSize;
         File *prev, *next;
 
     //Create file with id and value
-        File(int fileId, int value);
+        File(int fileId, int fileSize);
         File();
 };
 
@@ -25,7 +25,7 @@ class DoublyLinkedList {
      * Since it's based off of an LRU Cache System
     */
         DoublyLinkedList();
-        File* add_file_to_start(int fileId, int value);
+        File* add_file_to_start(int fileId, int fileSize);
         void move_file_to_start(File *file);
         //Combine remove and get rear
         int remove_last_file();
@@ -39,7 +39,7 @@ class LRUCache : public Cache {
 
 		LRUCache(int capacity);
 		int getFile(int fileId);
-		void insertFile(int fileId, int value);
+		void insertFile(int fileId, int fileSize);
 		~LRUCache();
         LRUCache();
 };

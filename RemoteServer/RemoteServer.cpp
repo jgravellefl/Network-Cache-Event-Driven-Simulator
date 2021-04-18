@@ -15,35 +15,35 @@ RemoteServer::RemoteServer(int propagationTime) {
     this->fileMap = map<int, File*>();
 }
 
-RemoteServer::RemoteServer(int propagationTime, int size, double paretoShape, double paretoScale) {
+RemoteServer::RemoteServer(int propagationTime, int size, double paretoShape, double paretoScale, int cacheSize) {
     this->propagationTime = propagationTime;
     this->currSize = size;
     this->fileMap = map<int, File*>();
     this->paretoScale = paretoScale;
     this->paretoShape = paretoShape;
-    this->populateServer();
+    this->populateServer(cacheSize);
 }
 
 int RemoteServer::getFile(int fileId) {
     if (this->fileMap.find(fileId) == this->fileMap.end()) {
         return -1;
     }
-    int currValue = fileMap[fileId]->value;
-    return currValue;
+    int currfileSize = fileMap[fileId]->fileSize;
+    return currfileSize;
 }
 
-void RemoteServer::insertFile(int fileId, int value) {
+void RemoteServer::insertFile(int fileId, int fileSize) {
     if (this->fileMap.find(fileId) != this->fileMap.end()) {
-        this->fileMap[fileId]->value = value;
+        this->fileMap[fileId]->fileSize = fileSize;
         return;
     }
 
-    File *file = new File(fileId, value);
+    File *file = new File(fileId, fileSize);
     this->fileMap[fileId] = file;
     this->currSize++;
 }
 
-void RemoteServer::populateServer() {
+void RemoteServer::populateServer(int cacheSize) {
 
     const gsl_rng_type * T;
     gsl_rng_env_setup();
@@ -56,6 +56,9 @@ void RemoteServer::populateServer() {
 
     for (int i = 1; i < this->currSize + 1; i++){
         double randomSample = gsl_ran_pareto(r, this->paretoShape, this->paretoScale);
+        while (randomSample > cacheSize){
+            randomSample = gsl_ran_pareto(r, this->paretoShape, this->paretoScale);
+        }
         File *file = new File(i, int(randomSample));
         this->fileMap[i] = file;
     }

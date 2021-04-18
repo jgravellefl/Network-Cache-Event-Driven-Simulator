@@ -30,27 +30,28 @@ int FIFOCache::getFile(int fileId) {
     if (this->fileMap.find(fileId) == this->fileMap.end()) {
         return -1;
     }
-    int currValue = fileMap[fileId]->value;
-    return currValue;
+    int currfileSize = fileMap[fileId]->fileSize;
+    return currfileSize;
 }
 
-void FIFOCache::insertFile(int fileId, int value) {
+void FIFOCache::insertFile(int fileId, int fileSize) {
     if (this->fileMap.find(fileId) != this->fileMap.end()) {
-        this->fileMap[fileId]->value = value;
+        this->fileMap[fileId]->fileSize = fileSize;
         return;
     }
 
     //If the current size reached capacity, remove the first in file
-    if (this->currSize == this->capacity) {
+    while (this->currSize + fileSize > this->capacity) {
+        int tempFileSize = this->fileMap[this->fileDeque.front()]->fileSize;
         this->fileMap.erase(this->fileDeque.front());
         this->fileDeque.pop_front();
-        this->currSize--;
+        this->currSize = this->currSize - tempFileSize;
     }
 
-    File *file = new File(fileId, value);
+    File *file = new File(fileId, fileSize);
     this->fileMap[fileId] = file;
     this->fileDeque.push_back(fileId);
-    this->currSize++;
+    this->currSize += fileSize;
 }
 
 FIFOCache::~FIFOCache() {
