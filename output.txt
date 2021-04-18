@@ -1,18 +1,1 @@
 testing files: 
-Running: LRU
-final time: 8.72287e+06
-avg time: 872.287
-
-
-
-
-Running: FIFO
-final time: 1.29125e+07
-avg time: 1291.25
-
-
-
-
-Running: SecondChance
-final time: 7.12141e+06
-avg time: 712.141

@@ -19,7 +19,7 @@
 using namespace std;
 
 
-void runEvents(Constants* constants, string name, int initRequests){
+float runEvents(Constants* constants, string name, int initRequests){
 
     priority_queue<Event*, std::vector<Event*>, LessThanByTime > pq;
     
@@ -49,6 +49,7 @@ void runEvents(Constants* constants, string name, int initRequests){
     cout << endl;
     cout << endl;
     cout << endl;
+    return avgTime;
 }
 
 int main(){
@@ -94,18 +95,40 @@ int main(){
     }*/
 
     Cache* _Cache = NULL;
+    float avg = 0;
     if (cacheType.compare("ALL") == 0){
         _Cache = new LRUCache(cacheCapacity);
         Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
-        runEvents(ourConstants, "LRU", numRequests);
+        avg = runEvents(ourConstants, "LRU", numRequests);
+        avg += runEvents(ourConstants, "LRU", numRequests);
+        avg += runEvents(ourConstants, "LRU", numRequests);
+        cout << "average of LRU time's: " << avg/3 << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
         delete ourConstants;
         _Cache = new FIFOCache(cacheCapacity);
         ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
-        runEvents(ourConstants, "FIFO", numRequests);
+        avg = runEvents(ourConstants, "FIFO", numRequests);
+        avg += runEvents(ourConstants, "FIFO", numRequests);
+        avg += runEvents(ourConstants, "FIFO", numRequests);
+        cout << "average of FIFO time's: " << avg/3 << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
         delete ourConstants;
         _Cache = new SecondChanceCache(cacheCapacity);
         ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
-        runEvents(ourConstants, "SecondChance", numRequests);
+        avg = runEvents(ourConstants, "SecondChance", numRequests);
+        avg += runEvents(ourConstants, "SecondChance", numRequests);
+        avg += runEvents(ourConstants, "SecondChance", numRequests);
+        cout << "average of SecondChance time's: " << avg/3 << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        cout << endl;
         delete ourConstants;
         
     }
