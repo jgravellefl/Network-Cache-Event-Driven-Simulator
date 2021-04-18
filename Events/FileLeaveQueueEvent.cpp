@@ -12,7 +12,7 @@ int FileLeaveQueueEvent::process(Event** returnEvents){
 	int fileId = this->constants->remoteServer->fifoQueue.front();
 	cout << "\tfileID gotten: " << fileId << endl;
 	this->constants->remoteServer->fifoQueue.pop();
-	this->constants->cache->insertFile(fileId, this->constants->remoteServer->getFile(fileId));
+	this->constants->LRUcache->insertFile(fileId, this->constants->remoteServer->getFile(fileId));
 	cout << "hello" << endl;
 	//error here I think/
 	this-constants->remoteServer->queuePop.erase(this->fileId);

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Event.h"
-#include "../Cache/Cache.h"
+#include "../LRUCache/LRUCache.h"
 
 class FileArriveEvent: public Event
 {

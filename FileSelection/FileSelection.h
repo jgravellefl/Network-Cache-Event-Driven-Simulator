@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <map>
-#include "../Cache/Cache.h"
+#include "../LRUCache/LRUCache.h"
 
 using namespace std;
 
