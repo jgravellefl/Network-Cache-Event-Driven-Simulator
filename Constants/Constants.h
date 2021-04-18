@@ -1,12 +1,12 @@
 #pragma once
-#include "../Cache/Cache.h"
+#include "../LRUCache/LRUCache.h"
 #include "../RemoteServer/RemoteServer.h"
 #include <queue>
 #include "../FileSelection/FileSelection.h"
 
 class Constants{
  public:
-  Cache* cache;
+  LRUCache* LRUcache;
   float fifoBandwidth;
   float cacheBandwidth;
   RemoteServer* remoteServer;
@@ -16,5 +16,5 @@ class Constants{
   float totalTime;
 
   Constants();
-  Constants(Cache* cache, float fifoBandwidth, float cacheBandwidth, RemoteServer* remoteServer, FileSelector* fileSelector, int numRequests, float poissonMean, float totalTime);
+  Constants(LRUCache* LRUcache, float fifoBandwidth, float cacheBandwidth, RemoteServer* remoteServer, FileSelector* fileSelector, int numRequests, float poissonMean, float totalTime);
 };

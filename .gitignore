@@ -1,7 +1,10 @@
 .idea/
 a.out
 main
+.vscode
+.DS_Store
 .vscode/settings.json
+output.txt
 main.dSYM/Contents/Info.plist
 .DS_Store
 .DS_Store

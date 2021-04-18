@@ -30,15 +30,15 @@ class DoublyLinkedList {
         int remove_last_file();
 };
 
-class Cache {
+class LRUCache {
     public:
 		int capacity, currSize;
 		DoublyLinkedList *fileLinkedList;
 		map<int, File*> fileMap;
 
-		Cache(int capacity);
+		LRUCache(int capacity);
 		int getFile(int fileId);
 		void insertFile(int fileId, int value);
-		~Cache();
-        Cache();
+		~LRUCache();
+        LRUCache();
 };
