@@ -2,7 +2,7 @@
 
 #include <random>
 #include "Event.h"
-#include "../LRUCache/LRUCache.h"
+#include "../Cache/Cache.h"
 #include <iostream>
 #include "../Constants/Constants.h"
 #include "FileRequestEvent.h"

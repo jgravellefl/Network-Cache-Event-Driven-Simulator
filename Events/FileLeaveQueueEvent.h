@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../LRUCache/LRUCache.h"
+#include "../Cache/Cache.h"
 #include "Event.h"
 #include "FileArriveEvent.h"
 

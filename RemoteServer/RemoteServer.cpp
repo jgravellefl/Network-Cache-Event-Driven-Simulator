@@ -8,7 +8,6 @@
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 #include <gsl/gsl_rng.h>
-#include "../LRUCache/LRUCache.h"
 
 RemoteServer::RemoteServer(int propagationTime) {
     this->propagationTime = propagationTime;

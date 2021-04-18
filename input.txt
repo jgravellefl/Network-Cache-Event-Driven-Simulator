@@ -1,10 +1,11 @@
-paretoMean = 10
-paretoShape = 2.5
-cacheCapacity = 20
-numFiles = 40
-numRequests = 100
-propagationTime = 4
-cacheBandwidth = 5
-fifoBandwidth = 2
-poissonMean = 5
-//options are cachetype or 'all' to run them all.
+paretoMean = 1000
+paretoShape = 2.0
+cacheCapacity = 5
+numFiles = 10000
+numRequests = 10000
+propagationTime = 400
+cacheBandwidth = 1000
+fifoBandwidth = 15
+poissonMean = 100
+//options = ALL, SECOND-CHANCE, FIFO, LRU.
+type = ALL

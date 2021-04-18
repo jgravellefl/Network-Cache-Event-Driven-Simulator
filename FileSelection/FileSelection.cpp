@@ -5,7 +5,6 @@
 #include <sys/time.h>
 #include <random>
 #include "FileSelection.h"
-#include "../LRUCache/LRUCache.h"
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 #include <gsl/gsl_rng.h>

@@ -10,14 +10,18 @@ FileRequestEvent::FileRequestEvent(float execTime, int fileId, Constants* consta
 		this->poissonDist = distribution;
 }
 
-int FileRequestEvent::process(Event** returnEvents){
-	cout << "file request event" << endl;
-	 cout << "\tfile: " << this->fileId << endl;
-	 cout << "\tExecTime: " << this->execTime << endl; 
+int FileRequestEvent::process(Event** returnEvents){ 
+	//cout << "requesting file: " << this->fileId << " at time " << this->execTime << endl;
+	//cout << "current files in cache: " << endl;
+	/*for (int i = 0; i < this->constants->remoteServer->currSize; i++){
+		if (this->constants->cache->getFile(i) != -1){
+			cout << "\t " << i << endl;
+		}
+	}*/
 	if (this->constants->numRequests > 1){
 	 	int sampleTime = this->poissonDist(this->generator) + this->execTime;
 		returnEvents[0] = new FileRequestEvent(sampleTime, this->constants->fileSelector->getFile(), this->constants);
-		if (this->constants->LRUcache->getFile(this->fileId) != -1){
+		if (this->constants->cache->getFile(this->fileId) != -1){
 			returnEvents[1] = new FileArriveEvent(this->execTime + (this->constants->remoteServer->getFile(this->fileId)/this->constants->cacheBandwidth),this->fileId ,this->constants);
 		}
 		else{
@@ -35,7 +39,7 @@ int FileRequestEvent::process(Event** returnEvents){
 	}
 	else {
 		int sampleTime = this->poissonDist(this->generator) + this->execTime;
-		if (this->constants->LRUcache->getFile(this->fileId) != -1){
+		if (this->constants->cache->getFile(this->fileId) != -1){
 			returnEvents[0] = new FileArriveEvent(this->execTime + (this->constants->remoteServer->getFile(this->fileId)/this->constants->cacheBandwidth),this->fileId ,this->constants);
 		}
 		else{
