@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <map>
+#include "../Cache/Cache.h"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ class DoublyLinkedList {
         int remove_last_file();
 };
 
-class LRUCache {
+class LRUCache : public Cache {
     public:
 		int capacity, currSize;
 		DoublyLinkedList *fileLinkedList;
