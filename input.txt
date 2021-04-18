@@ -1,6 +1,6 @@
 paretoMean = 1000
 paretoShape = 2.0
-cacheCapacity = 5
+cacheCapacity = 250
 numFiles = 10000
 numRequests = 10000
 propagationTime = 400

@@ -23,7 +23,7 @@ void runEvents(Constants* constants, string name, int initRequests){
 
     priority_queue<Event*, std::vector<Event*>, LessThanByTime > pq;
     
-    Event* event1 = new FileRequestEvent(0,  constants->fileSelector->getFile(), constants);
+    Event* event1 = new FileRequestEvent(0, 0,  constants->fileSelector->getFile(), constants);
 
     pq.push(event1);
     Event* eventParams[2] = {NULL}; 

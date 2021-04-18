@@ -18,7 +18,7 @@ class FileRequestEvent: public Event
   poisson_distribution<int> poissonDist;
 		mt19937 generator;
 	 FileRequestEvent();
-		FileRequestEvent(float nextTime, int fileId, Constants* constants);
+		FileRequestEvent(float initTime, float nextTime, int fileId, Constants* constants);
 		int process(Event** returnEvents);
 		~FileRequestEvent(){};
 };
