@@ -7,3 +7,4 @@ propagationTime = 4
 cacheBandwidth = 5
 fifoBandwidth = 2
 poissonMean = 5
+//options are cachetype or 'all' to run them all.

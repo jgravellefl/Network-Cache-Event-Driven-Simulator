@@ -50,6 +50,7 @@ int main(){
     int cacheBandwidth = stoi(fileInput[6]);
     int fifoBandwidth = stoi(fileInput[7]);
     int poissonMean = stoi(fileInput[8]);
+    //string cacheType = stoi(fileInput[10])
 
     RemoteServer* remoteServer = new RemoteServer(propagationTime, numFiles, paretoShape, paretoScale); // Remote Server with propagation time = 400
     std::cout << "files" << endl;
@@ -68,6 +69,36 @@ int main(){
 
     // Add FIFO
     Constants* constants = new Constants(LRU_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+
+    /*
+    Cache* ourCache;
+    if (cacheType.compare("ALL") == 0){
+        ourCache = new LRUCache(capacity)
+        Constants* ourConstants = new Constants(ourCache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+        runEvents(ourConstants)
+        ourCache = new FIFOCache(capacity)
+        Constants* ourConstants = new Constants(ourCache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+        runEvents(ourConstants)
+        ourCache = new SecondChanceCache(capacity)
+        Constants* ourConstants = new Constants(ourCache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+        runEvents(ourConstants)
+        
+    }
+    else {
+        if (cacheType.compare("LRU") == 0){
+            ourCache = new LRUCache(capacity)
+            
+        }
+        else if (cacheType.compare("FIFO") == 0){
+            ourCache = new FIFOCache(capacity)
+        }
+        else if (cacheType.compare("SECOND-CHANCE") == 0){
+            ourCache = new SecondChanceCache(capacity)
+        }
+        Constants* ourConstants = new Constants(ourCache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0);
+        runEvents(ourConstants)
+    }
+    */
 
     priority_queue<Event*, std::vector<Event*>, LessThanByTime > pq;
     
@@ -120,4 +151,33 @@ int main(){
     cout << "Get File 2: " << SecondChance_Cache->getFile(2) << endl;
     cout << "Get File 5: " << SecondChance_Cache->getFile(5) << endl;
     return 0;
+}
+
+void runEvents(Constants* constants){
+
+    priority_queue<Event*, std::vector<Event*>, LessThanByTime > pq;
+    
+    Event* event1 = new FileRequestEvent(0, 2, constants);
+
+    pq.push(event1);
+    Event* eventParams[2] = {NULL}; 
+    int returnNum;
+
+    std::cout << "Testing processing events framework:" << endl;
+    while (!pq.empty()){
+        Event* currEvent = pq.top();
+        cout <<"in main" << endl;
+        pq.pop();
+        returnNum = currEvent->process(eventParams);
+        cout << "return value:  " << returnNum << endl;
+        delete currEvent;
+        if (returnNum > 0){
+            cout <<  "pushing: " << eventParams[0] << endl;
+            pq.push(eventParams[0]);
+        }
+        if (returnNum > 1){
+            cout <<  "pushing: " << eventParams[1] << endl;
+            pq.push(eventParams[1]);
+        }
+    }
 }

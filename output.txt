@@ -1,69 +1,78 @@
+10
+2.5
+20
+40
+100
+4
+5
+2
+5
 files
-file 1: 6
-file 2: 12
-file 3: 9
-file 4: 6
-file 5: 10
-file 6: 8
-file 7: 6
-file 8: 6
+file 1: 8
+file 2: 6
+file 3: 16
+file 4: 8
+file 5: 23
+file 6: 6
+file 7: 15
+file 8: 11
 file 9: 7
-file 10: 6
-file 11: 6
-file 12: 7
-file 13: 9
-file 14: 6
-file 15: 7
-file 16: 12
-file 17: 8
-file 18: 8
-file 19: 10
-file 20: 11
-file 21: 24
-file 22: 9
-file 23: 11
-file 24: 6
+file 10: 10
+file 11: 12
+file 12: 6
+file 13: 7
+file 14: 9
+file 15: 6
+file 16: 8
+file 17: 7
+file 18: 6
+file 19: 12
+file 20: 6
+file 21: 7
+file 22: 8
+file 23: 9
+file 24: 34
 file 25: 7
-file 26: 6
-file 27: 7
-file 28: 7
+file 26: 8
+file 27: 6
+file 28: 6
 file 29: 7
-file 30: 11
-file 31: 9
-file 32: 14
-file 33: 18
-file 34: 7
+file 30: 9
+file 31: 7
+file 32: 6
+file 33: 6
+file 34: 6
 file 35: 6
-file 36: 7
-file 37: 6
-file 38: 15
+file 36: 6
+file 37: 7
+file 38: 12
 file 39: 6
-file 40: 14
+file 40: 13
 Testing processing events framework:
 in main
 file request event
 	file: 2
 	ExecTime: 0
 return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf4071e0
+pushing: 0x7fe60700da00
+pushing: 0x7fe606506000
 in main
 file enter queue event
 	file: 2
 	ExecTime: 4
 return value:  1
-pushing: 0x7f8edf407260
+pushing: 0x7fe606506080
 in main
 file request event
-	file: 22
-	ExecTime: 10
+	file: 7
+	ExecTime: 7
 return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf4071e0
+pushing: 0x7fe607009200
+pushing: 0x7fe606506000
 in main
 file leave queue event
 	file: 2
-	ExecTime: 10
+	ExecTime: 7
 	fileID gotten: 2
 hello
 yello
@@ -73,551 +82,114 @@ queue value:
 	 top: 0
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf407200
+pushing: 0x7fe606506020
+in main
+file request event
+	file: 10
+	ExecTime: 8
+return value:  2
+pushing: 0x7fe60700da00
+pushing: 0x7fe606506080
 in main
 file arrive event
 	file: 2
-	ExecTime: 12.4
+	ExecTime: 8.2
 return value:  0
 in main
 file enter queue event
-	file: 22
-	ExecTime: 14
+	file: 7
+	ExecTime: 11
 return value:  1
-pushing: 0x7f8edf407200
+pushing: 0x7fe606506020
+in main
+file enter queue event
+	file: 10
+	ExecTime: 12
+return value:  0
 in main
 file request event
-	file: 27
+	file: 15
+	ExecTime: 13
+return value:  2
+pushing: 0x7fe607009200
+pushing: 0x7fe606506080
+in main
+file request event
+	file: 2
+	ExecTime: 16
+return value:  2
+pushing: 0x7fe60700da00
+pushing: 0x7fe606506150
+in main
+file enter queue event
+	file: 15
 	ExecTime: 17
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf4071e0
+return value:  0
+in main
+file arrive event
+	file: 2
+	ExecTime: 17.2
+return value:  0
 in main
 file leave queue event
-	file: 22
+	file: 7
 	ExecTime: 18.5
-	fileID gotten: 22
+	fileID gotten: 7
 hello
 yello
-queue emtpy status; 1
+queue emtpy status; 0
 queue value: 
-	size: 0
-	 top: 0
+	size: 2
+	 top: 10
 	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407280
+10
+return value:  2
+pushing: 0x7fe6065060a0
+pushing: 0x7fe606506080
 in main
 file arrive event
-	file: 22
-	ExecTime: 20.3
+	file: 7
+	ExecTime: 21.5
 return value:  0
-in main
-file enter queue event
-	file: 27
-	ExecTime: 21
-return value:  1
-pushing: 0x7f8edf407280
-in main
-file request event
-	file: 9
-	ExecTime: 22
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf4071e0
 in main
 file leave queue event
-	file: 27
-	ExecTime: 24.5
-	fileID gotten: 27
+	file: 10
+	ExecTime: 23.5
+	fileID gotten: 10
 hello
 yello
-queue emtpy status; 1
+queue emtpy status; 0
 queue value: 
-	size: 0
-	 top: 0
+	size: 1
+	 top: 15
 	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407260
+15
+return value:  2
+pushing: 0x7fe606506130
+pushing: 0x7fe6065061a0
+in main
+file request event
+	file: 29
+	ExecTime: 24
+return value:  2
+pushing: 0x7fe607009200
+pushing: 0x7fe606506080
 in main
 file arrive event
-	file: 27
-	ExecTime: 25.9
+	file: 10
+	ExecTime: 25.5
 return value:  0
 in main
-file enter queue event
-	file: 9
+file request event
+	file: 39
 	ExecTime: 26
-return value:  1
-pushing: 0x7f8edf407260
-in main
-file leave queue event
-	file: 9
-	ExecTime: 29.5
-	fileID gotten: 9
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407200
-in main
-file arrive event
-	file: 9
-	ExecTime: 30.9
-return value:  0
-in main
-file request event
-	file: 21
-	ExecTime: 33
 return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407200
-in main
-file enter queue event
-	file: 21
-	ExecTime: 37
-return value:  1
-pushing: 0x7f8edf407280
-in main
-file request event
-	file: 32
-	ExecTime: 38
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407200
-in main
-file enter queue event
-	file: 32
-	ExecTime: 42
-return value:  0
-in main
-file request event
-	file: 4
-	ExecTime: 43
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407200
-in main
-file enter queue event
-	file: 4
-	ExecTime: 47
-return value:  0
-in main
-file request event
-	file: 29
-	ExecTime: 49
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407200
-in main
-file leave queue event
-	file: 21
-	ExecTime: 49
-	fileID gotten: 21
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 2
-	 top: 32
-	 remote server valid? propagation time: 4
-32
-return value:  2
-pushing: 0x7f8edf407260
-pushing: 0x7f8edf407490
-in main
-file enter queue event
-	file: 29
-	ExecTime: 53
-return value:  0
-in main
-file arrive event
-	file: 21
-	ExecTime: 53.8
-return value:  0
-in main
-file request event
-	file: 20
-	ExecTime: 55
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407260
-in main
-file leave queue event
-	file: 32
-	ExecTime: 56
-	fileID gotten: 32
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 2
-	 top: 4
-	 remote server valid? propagation time: 4
-4
-return value:  2
-pushing: 0x7f8edf4073e0
-pushing: 0x7f8edf4074e0
-in main
-file arrive event
-	file: 32
-	ExecTime: 58.8
-return value:  0
-in main
-file leave queue event
-	file: 4
-	ExecTime: 59
-	fileID gotten: 4
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 29
-	 remote server valid? propagation time: 4
-29
-return value:  2
-pushing: 0x7f8edf407400
-pushing: 0x7f8edf407490
-in main
-file enter queue event
-	file: 20
-	ExecTime: 59
-return value:  0
-in main
-file arrive event
-	file: 4
-	ExecTime: 60.2
-return value:  0
-in main
-file request event
-	file: 0
-	ExecTime: 61
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407400
-in main
-file leave queue event
-	file: 29
-	ExecTime: 62.5
-	fileID gotten: 29
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 20
-	 remote server valid? propagation time: 4
-20
-return value:  2
-pushing: 0x7f8edf407420
-pushing: 0x7f8edf407560
-in main
-file arrive event
-	file: 29
-	ExecTime: 63.9
-return value:  0
-in main
-file enter queue event
-	file: 0
-	ExecTime: 65
-return value:  0
-in main
-file request event
-	file: 35
-	ExecTime: 65
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407400
-in main
-file leave queue event
-	file: 20
-	ExecTime: 68
-	fileID gotten: 20
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 0
-	 remote server valid? propagation time: 4
-0
-return value:  2
-pushing: 0x7f8edf407280
-pushing: 0x7f8edf4075b0
-in main
-file leave queue event
-	file: 0
-	ExecTime: 67.5
-	fileID gotten: 0
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407260
-in main
-file arrive event
-	file: 0
-	ExecTime: 67.3
-return value:  0
-in main
-file enter queue event
-	file: 35
-	ExecTime: 69
-return value:  1
-pushing: 0x7f8edf407260
-in main
-file arrive event
-	file: 20
-	ExecTime: 70.2
-return value:  0
-in main
-file request event
-	file: 28
-	ExecTime: 71
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407280
-in main
-file leave queue event
-	file: 35
-	ExecTime: 72
-	fileID gotten: 35
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407420
-in main
-file arrive event
-	file: 35
-	ExecTime: 73.2
-return value:  0
-in main
-file enter queue event
-	file: 28
-	ExecTime: 75
-return value:  1
-pushing: 0x7f8edf407420
-in main
-file request event
-	file: 16
-	ExecTime: 76
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407280
-in main
-file leave queue event
-	file: 28
-	ExecTime: 78.5
-	fileID gotten: 28
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407400
-in main
-file arrive event
-	file: 28
-	ExecTime: 79.9
-return value:  0
-in main
-file enter queue event
-	file: 16
-	ExecTime: 80
-return value:  1
-pushing: 0x7f8edf407400
-in main
-file request event
-	file: 17
-	ExecTime: 80
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407280
-in main
-file enter queue event
-	file: 17
-	ExecTime: 84
-return value:  0
-in main
-file request event
-	file: 22
-	ExecTime: 85
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf504080
-in main
-file leave queue event
-	file: 16
-	ExecTime: 86
-	fileID gotten: 16
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 17
-	 remote server valid? propagation time: 4
-17
-return value:  2
-pushing: 0x7f8edf5040f0
-pushing: 0x7f8edf504110
-in main
-file arrive event
-	file: 22
-	ExecTime: 86.8
-return value:  0
-in main
-file arrive event
-	file: 16
-	ExecTime: 88.4
-return value:  0
-in main
-file request event
-	file: 22
-	ExecTime: 90
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf5040f0
-in main
-file leave queue event
-	file: 17
-	ExecTime: 90
-	fileID gotten: 17
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf504160
-in main
-file arrive event
-	file: 17
-	ExecTime: 91.6
-return value:  0
-in main
-file arrive event
-	file: 22
-	ExecTime: 91.8
-return value:  0
-in main
-file request event
-	file: 30
-	ExecTime: 94
-return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf5040f0
-in main
-file enter queue event
-	file: 30
-	ExecTime: 98
-return value:  1
-pushing: 0x7f8edf504110
-in main
-file leave queue event
-	file: 30
-	ExecTime: 103.5
-	fileID gotten: 30
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf604080
-in main
-file request event
-	file: 4
-	ExecTime: 105
-return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf6040a0
-in main
-file arrive event
-	file: 30
-	ExecTime: 105.7
-return value:  0
-in main
-file arrive event
-	file: 4
-	ExecTime: 106.2
-return value:  0
-in main
-file request event
-	file: 18
-	ExecTime: 111
-return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf6040a0
-in main
-file enter queue event
-	file: 18
-	ExecTime: 115
-return value:  1
-pushing: 0x7f8edf6040c0
-in main
-file request event
-	file: 15
-	ExecTime: 117
-return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf6040a0
-in main
-file leave queue event
-	file: 18
-	ExecTime: 119
-	fileID gotten: 18
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf604080
-in main
-file arrive event
-	file: 18
-	ExecTime: 120.6
-return value:  0
-in main
-file enter queue event
-	file: 15
-	ExecTime: 121
-return value:  1
-pushing: 0x7f8edf604080
-in main
-file request event
-	file: 32
-	ExecTime: 124
-return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf6040a0
+pushing: 0x7fe60700da00
+pushing: 0x7fe606506130
 in main
 file leave queue event
 	file: 15
-	ExecTime: 124.5
+	ExecTime: 26.5
 	fileID gotten: 15
 hello
 yello
@@ -627,536 +199,929 @@ queue value:
 	 top: 0
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf6040e0
+pushing: 0x7fe606506000
+in main
+file request event
+	file: 33
+	ExecTime: 27
+return value:  2
+pushing: 0x7fe607009200
+pushing: 0x7fe6065061a0
 in main
 file arrive event
 	file: 15
-	ExecTime: 125.9
+	ExecTime: 27.7
+return value:  0
+in main
+file enter queue event
+	file: 29
+	ExecTime: 28
+return value:  1
+pushing: 0x7fe606506000
+in main
+file enter queue event
+	file: 39
+	ExecTime: 30
+return value:  0
+in main
+file enter queue event
+	file: 33
+	ExecTime: 31
+return value:  0
+in main
+file leave queue event
+	file: 29
+	ExecTime: 31.5
+	fileID gotten: 29
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 2
+	 top: 39
+	 remote server valid? propagation time: 4
+39
+return value:  2
+pushing: 0x7fe6065061c0
+pushing: 0x7fe606506130
+in main
+file arrive event
+	file: 29
+	ExecTime: 32.9
+return value:  0
+in main
+file leave queue event
+	file: 39
+	ExecTime: 34.5
+	fileID gotten: 39
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 1
+	 top: 33
+	 remote server valid? propagation time: 4
+33
+return value:  2
+pushing: 0x7fe6065061e0
+pushing: 0x7fe606506000
+in main
+file request event
+	file: 10
+	ExecTime: 35
+return value:  2
+pushing: 0x7fe60700da00
+pushing: 0x7fe606506130
+in main
+file arrive event
+	file: 39
+	ExecTime: 35.7
 return value:  0
 in main
 file arrive event
-	file: 32
-	ExecTime: 126.8
+	file: 10
+	ExecTime: 37
 return value:  0
 in main
-file request event
-	file: 5
-	ExecTime: 131
-return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf6040a0
-in main
-file enter queue event
-	file: 5
-	ExecTime: 135
-return value:  1
-pushing: 0x7f8edf604080
-in main
-file request event
-	file: 23
-	ExecTime: 137
-return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf6040a0
-in main
 file leave queue event
-	file: 5
-	ExecTime: 140
-	fileID gotten: 5
+	file: 33
+	ExecTime: 37.5
+	fileID gotten: 33
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 775036989
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf6040e0
+pushing: 0x7fe606506250
+in main
+file arrive event
+	file: 33
+	ExecTime: 38.7
+return value:  0
 in main
 file request event
-	file: 17
-	ExecTime: 141
+	file: 23
+	ExecTime: 42
 return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf604080
+pushing: 0x7fe607009200
+pushing: 0x7fe606506250
 in main
 file enter queue event
 	file: 23
-	ExecTime: 141
+	ExecTime: 46
 return value:  1
-pushing: 0x7f8edf6041f0
-in main
-file arrive event
-	file: 5
-	ExecTime: 142
-return value:  0
-in main
-file arrive event
-	file: 17
-	ExecTime: 142.6
-return value:  0
+pushing: 0x7fe6065061e0
 in main
 file request event
-	file: 28
-	ExecTime: 146
+	file: 10
+	ExecTime: 48
 return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf604080
+pushing: 0x7fe60700da00
+pushing: 0x7fe606506250
+in main
+file arrive event
+	file: 10
+	ExecTime: 50
+return value:  0
 in main
 file leave queue event
 	file: 23
-	ExecTime: 146.5
+	ExecTime: 50.5
 	fileID gotten: 23
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1633880629
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf604180
+pushing: 0x7fe606506000
 in main
-file arrive event
-	file: 28
-	ExecTime: 147.4
-return value:  0
+file request event
+	file: 35
+	ExecTime: 52
+return value:  2
+pushing: 0x7fe607009200
+pushing: 0x7fe6065061e0
 in main
 file arrive event
 	file: 23
-	ExecTime: 148.7
+	ExecTime: 52.3
 return value:  0
 in main
 file request event
-	file: 6
-	ExecTime: 152
+	file: 32
+	ExecTime: 55
 return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf604180
+pushing: 0x7fe60700da00
+pushing: 0x7fe606506000
 in main
 file enter queue event
-	file: 6
-	ExecTime: 156
+	file: 35
+	ExecTime: 56
 return value:  1
-pushing: 0x7f8edf604080
-in main
-file request event
-	file: 7
-	ExecTime: 158
-return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf604180
-in main
-file leave queue event
-	file: 6
-	ExecTime: 160
-	fileID gotten: 6
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf6041f0
-in main
-file request event
-	file: 12
-	ExecTime: 161
-return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf604080
-in main
-file arrive event
-	file: 6
-	ExecTime: 161.6
-return value:  0
+pushing: 0x7fe606506370
 in main
 file enter queue event
-	file: 7
-	ExecTime: 162
-return value:  1
-pushing: 0x7f8edf6041f0
-in main
-file enter queue event
-	file: 12
-	ExecTime: 165
+	file: 32
+	ExecTime: 59
 return value:  0
 in main
 file leave queue event
-	file: 7
-	ExecTime: 165
-	fileID gotten: 7
+	file: 35
+	ExecTime: 59
+	fileID gotten: 35
 hello
 yello
 queue emtpy status; 0
 queue value: 
 	size: 1
-	 top: 12
+	 top: 32
 	 remote server valid? propagation time: 4
-12
+32
 return value:  2
-pushing: 0x7f8edf6040a0
-pushing: 0x7f8edf604180
-in main
-file arrive event
-	file: 7
-	ExecTime: 166.2
-return value:  0
+pushing: 0x7fe606506080
+pushing: 0x7fe6065061e0
 in main
 file request event
-	file: 18
-	ExecTime: 168
+	file: 1
+	ExecTime: 60
 return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf6040a0
+pushing: 0x7fe607009200
+pushing: 0x7fe606506370
+in main
+file arrive event
+	file: 35
+	ExecTime: 60.2
+return value:  0
 in main
 file leave queue event
-	file: 12
-	ExecTime: 168.5
-	fileID gotten: 12
+	file: 32
+	ExecTime: 62
+	fileID gotten: 32
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1667330145
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf604290
+pushing: 0x7fe6066040d0
 in main
 file arrive event
-	file: 18
-	ExecTime: 169.6
+	file: 32
+	ExecTime: 63.2
 return value:  0
-in main
-file arrive event
-	file: 12
-	ExecTime: 169.9
-return value:  0
-in main
-file request event
-	file: 33
-	ExecTime: 173
-return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf604290
 in main
 file enter queue event
-	file: 33
-	ExecTime: 177
+	file: 1
+	ExecTime: 64
 return value:  1
-pushing: 0x7f8edf604180
+pushing: 0x7fe6066040d0
 in main
 file request event
-	file: 31
-	ExecTime: 178
-return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf604290
-in main
-file request event
-	file: 22
-	ExecTime: 180
-return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf604330
-in main
-file arrive event
-	file: 22
-	ExecTime: 181.8
-return value:  0
-in main
-file enter queue event
-	file: 31
-	ExecTime: 182
-return value:  0
-in main
-file request event
-	file: 15
-	ExecTime: 184
-return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf604290
-in main
-file arrive event
-	file: 15
-	ExecTime: 185.4
-return value:  0
+	file: 1
+	ExecTime: 68
+return value:  1
+pushing: 0x7fe607808200
 in main
 file leave queue event
-	file: 33
-	ExecTime: 186
-	fileID gotten: 33
+	file: 1
+	ExecTime: 68
+	fileID gotten: 1
 hello
 yello
-queue emtpy status; 0
+queue emtpy status; 1
 queue value: 
-	size: 1
-	 top: 31
+	size: 0
+	 top: 544830569
 	 remote server valid? propagation time: 4
-31
-return value:  2
-pushing: 0x7f8edf6040a0
-pushing: 0x7f8edf604330
-in main
-file request event
-	file: 9
-	ExecTime: 187
-return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf604180
+return value:  1
+pushing: 0x7fe6065063c0
 in main
 file arrive event
-	file: 33
-	ExecTime: 189.6
+	file: 1
+	ExecTime: 69.6
 return value:  0
+in main
+file request event
+	file: 35
+	ExecTime: 79
+return value:  2
+pushing: 0x7fe607009200
+pushing: 0x7fe6065063c0
+in main
+file arrive event
+	file: 35
+	ExecTime: 80.2
+return value:  0
+in main
+file request event
+	file: 35
+	ExecTime: 86
+return value:  2
+pushing: 0x7fe60700da00
+pushing: 0x7fe6065063c0
+in main
+file arrive event
+	file: 35
+	ExecTime: 87.2
+return value:  0
+in main
+file request event
+	file: 32
+	ExecTime: 89
+return value:  2
+pushing: 0x7fe608008200
+pushing: 0x7fe606704080
+in main
+file arrive event
+	file: 32
+	ExecTime: 90.2
+return value:  0
+in main
+file request event
+	file: 31
+	ExecTime: 94
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066040d0
+in main
+file enter queue event
+	file: 31
+	ExecTime: 98
+return value:  1
+pushing: 0x7fe606604110
+in main
+file request event
+	file: 39
+	ExecTime: 101
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe6066040d0
 in main
 file leave queue event
 	file: 31
-	ExecTime: 190.5
+	ExecTime: 101.5
 	fileID gotten: 31
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 808591421
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf604310
+pushing: 0x7fe6066040f0
 in main
-file enter queue event
-	file: 9
-	ExecTime: 191
-return value:  1
-pushing: 0x7f8edf604330
+file arrive event
+	file: 39
+	ExecTime: 102.2
+return value:  0
 in main
 file arrive event
 	file: 31
-	ExecTime: 192.3
+	ExecTime: 102.9
+return value:  0
+in main
+file request event
+	file: 29
+	ExecTime: 108
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066040f0
+in main
+file arrive event
+	file: 29
+	ExecTime: 109.4
+return value:  0
+in main
+file request event
+	file: 38
+	ExecTime: 115
+return value:  2
+pushing: 0x7fe608008200
+pushing: 0x7fe606704080
+in main
+file enter queue event
+	file: 38
+	ExecTime: 119
+return value:  1
+pushing: 0x7fe606405340
+in main
+file leave queue event
+	file: 38
+	ExecTime: 125
+	fileID gotten: 38
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 1836412426
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe6064053b0
+in main
+file arrive event
+	file: 38
+	ExecTime: 127.4
+return value:  0
+in main
+file request event
+	file: 28
+	ExecTime: 129
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe6064053b0
+in main
+file request event
+	file: 39
+	ExecTime: 131
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe6064053d0
+in main
+file arrive event
+	file: 39
+	ExecTime: 132.2
+return value:  0
+in main
+file enter queue event
+	file: 28
+	ExecTime: 133
+return value:  1
+pushing: 0x7fe6064053d0
+in main
+file leave queue event
+	file: 28
+	ExecTime: 136
+	fileID gotten: 28
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 1701603654
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe606405340
+in main
+file request event
+	file: 26
+	ExecTime: 137
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe6064053d0
+in main
+file arrive event
+	file: 28
+	ExecTime: 137.2
+return value:  0
+in main
+file request event
+	file: 17
+	ExecTime: 141
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405340
+in main
+file enter queue event
+	file: 26
+	ExecTime: 141
+return value:  1
+pushing: 0x7fe606405460
+in main
+file request event
+	file: 37
+	ExecTime: 145
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe6064053d0
+in main
+file enter queue event
+	file: 17
+	ExecTime: 145
+return value:  0
+in main
+file leave queue event
+	file: 26
+	ExecTime: 145
+	fileID gotten: 26
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 1
+	 top: 17
+	 remote server valid? propagation time: 4
+17
+return value:  2
+pushing: 0x7fe606405420
+pushing: 0x7fe6064054d0
+in main
+file arrive event
+	file: 26
+	ExecTime: 146.6
+return value:  0
+in main
+file leave queue event
+	file: 17
+	ExecTime: 148.5
+	fileID gotten: 17
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 1846161460
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe606405440
+in main
+file enter queue event
+	file: 37
+	ExecTime: 149
+return value:  1
+pushing: 0x7fe6064054d0
+in main
+file arrive event
+	file: 17
+	ExecTime: 149.9
+return value:  0
+in main
+file request event
+	file: 7
+	ExecTime: 151
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405440
+in main
+file leave queue event
+	file: 37
+	ExecTime: 152.5
+	fileID gotten: 37
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 1699900789
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe606405480
+in main
+file arrive event
+	file: 37
+	ExecTime: 153.9
+return value:  0
+in main
+file arrive event
+	file: 7
+	ExecTime: 154
+return value:  0
+in main
+file request event
+	file: 29
+	ExecTime: 154
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe606405440
+in main
+file arrive event
+	file: 29
+	ExecTime: 155.4
+return value:  0
+in main
+file request event
+	file: 10
+	ExecTime: 163
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405440
+in main
+file arrive event
+	file: 10
+	ExecTime: 165
+return value:  0
+in main
+file request event
+	file: 17
+	ExecTime: 168
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe606405440
+in main
+file arrive event
+	file: 17
+	ExecTime: 169.4
+return value:  0
+in main
+file request event
+	file: 8
+	ExecTime: 172
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405440
+in main
+file enter queue event
+	file: 8
+	ExecTime: 176
+return value:  1
+pushing: 0x7fe606405460
+in main
+file request event
+	file: 5
+	ExecTime: 177
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe606405440
+in main
+file enter queue event
+	file: 5
+	ExecTime: 181
+return value:  0
+in main
+file leave queue event
+	file: 8
+	ExecTime: 181.5
+	fileID gotten: 8
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 1
+	 top: 5
+	 remote server valid? propagation time: 4
+5
+return value:  2
+pushing: 0x7fe6064054d0
+pushing: 0x7fe606405580
+in main
+file request event
+	file: 18
+	ExecTime: 182
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405460
+in main
+file arrive event
+	file: 8
+	ExecTime: 183.7
+return value:  0
+in main
+file enter queue event
+	file: 18
+	ExecTime: 186
 return value:  0
 in main
 file request event
 	file: 20
+	ExecTime: 188
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe606405460
+in main
+file request event
+	file: 2
+	ExecTime: 192
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe6064055c0
+in main
+file enter queue event
+	file: 20
+	ExecTime: 192
+return value:  0
+in main
+file leave queue event
+	file: 5
 	ExecTime: 193
+	fileID gotten: 5
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 2
+	 top: 18
+	 remote server valid? propagation time: 4
+18
 return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf604310
+pushing: 0x7fe606405480
+pushing: 0x7fe606405610
+in main
+file arrive event
+	file: 2
+	ExecTime: 193.2
+return value:  0
+in main
+file request event
+	file: 23
+	ExecTime: 196
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe6064055c0
 in main
 file leave queue event
-	file: 9
-	ExecTime: 194.5
-	fileID gotten: 9
+	file: 18
+	ExecTime: 196
+	fileID gotten: 18
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 1
+	 top: 20
+	 remote server valid? propagation time: 4
+20
+return value:  2
+pushing: 0x7fe6064055a0
+pushing: 0x7fe606405660
+in main
+file arrive event
+	file: 18
+	ExecTime: 197.2
+return value:  0
+in main
+file arrive event
+	file: 5
+	ExecTime: 197.6
+return value:  0
+in main
+file arrive event
+	file: 23
+	ExecTime: 197.8
+return value:  0
+in main
+file leave queue event
+	file: 20
+	ExecTime: 199
+	fileID gotten: 20
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1869770762
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf604380
+pushing: 0x7fe6064054d0
 in main
 file arrive event
 	file: 20
-	ExecTime: 195.2
-return value:  0
-in main
-file arrive event
-	file: 9
-	ExecTime: 195.9
+	ExecTime: 200.2
 return value:  0
 in main
 file request event
-	file: 29
-	ExecTime: 197
+	file: 21
+	ExecTime: 202
 return value:  2
-pushing: 0x7f8ee0808200
-pushing: 0x7f8edf604380
+pushing: 0x7fe606809400
+pushing: 0x7fe6064054d0
 in main
 file enter queue event
-	file: 29
-	ExecTime: 201
+	file: 21
+	ExecTime: 206
 return value:  1
-pushing: 0x7f8edf604330
+pushing: 0x7fe606405480
 in main
 file request event
-	file: 0
-	ExecTime: 203
+	file: 37
+	ExecTime: 207
 return value:  2
-pushing: 0x7f8ee0808e00
-pushing: 0x7f8edf604380
+pushing: 0x7fe606808800
+pushing: 0x7fe6064054d0
+in main
+file arrive event
+	file: 37
+	ExecTime: 208.4
+return value:  0
 in main
 file leave queue event
-	file: 29
-	ExecTime: 204.5
-	fileID gotten: 29
+	file: 21
+	ExecTime: 209.5
+	fileID gotten: 21
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1634165104
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf504160
+pushing: 0x7fe606405660
 in main
 file arrive event
-	file: 29
-	ExecTime: 205.9
-return value:  0
-in main
-file enter queue event
-	file: 0
-	ExecTime: 207
-return value:  1
-pushing: 0x7f8edf504160
-in main
-file leave queue event
-	file: 0
-	ExecTime: 206.5
-	fileID gotten: 0
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf5041e0
-in main
-file arrive event
-	file: 0
-	ExecTime: 206.3
+	file: 21
+	ExecTime: 210.9
 return value:  0
 in main
 file request event
-	file: 34
-	ExecTime: 207
-return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf5041e0
-in main
-file enter queue event
-	file: 34
+	file: 27
 	ExecTime: 211
-return value:  1
-pushing: 0x7f8edf504200
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405660
 in main
-file leave queue event
-	file: 34
-	ExecTime: 214.5
-	fileID gotten: 34
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf504160
-in main
-file request event
-	file: 16
+file enter queue event
+	file: 27
 	ExecTime: 215
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504200
-in main
-file arrive event
-	file: 34
-	ExecTime: 215.9
-return value:  0
-in main
-file enter queue event
-	file: 16
-	ExecTime: 219
 return value:  1
-pushing: 0x7f8edf504160
+pushing: 0x7fe6064055a0
 in main
 file request event
-	file: 30
-	ExecTime: 222
+	file: 19
+	ExecTime: 218
 return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf504200
-in main
-file request event
-	file: 25
-	ExecTime: 224
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504220
-in main
-file request event
-	file: 2
-	ExecTime: 224
-return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf504260
-in main
-file arrive event
-	file: 30
-	ExecTime: 224.2
-return value:  0
+pushing: 0x7fe606808800
+pushing: 0x7fe606405660
 in main
 file leave queue event
-	file: 16
-	ExecTime: 225
-	fileID gotten: 16
+	file: 27
+	ExecTime: 218
+	fileID gotten: 27
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1852795252
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf5041e0
+pushing: 0x7fe606405480
 in main
 file arrive event
-	file: 16
-	ExecTime: 227.4
+	file: 27
+	ExecTime: 219.2
 return value:  0
 in main
 file enter queue event
-	file: 2
+	file: 19
+	ExecTime: 222
+return value:  1
+pushing: 0x7fe606405480
+in main
+file request event
+	file: 6
+	ExecTime: 224
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405660
+in main
+file request event
+	file: 39
+	ExecTime: 226
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe606405730
+in main
+file arrive event
+	file: 39
+	ExecTime: 227.2
+return value:  0
+in main
+file leave queue event
+	file: 19
+	ExecTime: 228
+	fileID gotten: 19
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 1701669204
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe606405610
+in main
+file enter queue event
+	file: 6
 	ExecTime: 228
 return value:  1
-pushing: 0x7f8edf5041e0
+pushing: 0x7fe606405480
+in main
+file arrive event
+	file: 19
+	ExecTime: 230.4
+return value:  0
+in main
+file leave queue event
+	file: 6
+	ExecTime: 231
+	fileID gotten: 6
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 874528032
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe6064055a0
+in main
+file request event
+	file: 29
+	ExecTime: 232
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405480
+in main
+file arrive event
+	file: 6
+	ExecTime: 232.2
+return value:  0
+in main
+file arrive event
+	file: 29
+	ExecTime: 233.4
+return value:  0
+in main
+file request event
+	file: 22
+	ExecTime: 235
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe606405480
+in main
+file request event
+	file: 25
+	ExecTime: 237
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe608804080
+in main
+file enter queue event
+	file: 22
+	ExecTime: 239
+return value:  1
+pushing: 0x7fe606405660
+in main
+file request event
+	file: 38
+	ExecTime: 239
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe606405480
 in main
 file enter queue event
 	file: 25
-	ExecTime: 228
+	ExecTime: 241
 return value:  0
-in main
-file request event
-	file: 12
-	ExecTime: 230
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504220
 in main
 file arrive event
-	file: 12
-	ExecTime: 231.4
+	file: 38
+	ExecTime: 241.4
 return value:  0
 in main
-file request event
-	file: 9
-	ExecTime: 234
-return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf504220
-in main
 file leave queue event
-	file: 2
-	ExecTime: 234
-	fileID gotten: 2
+	file: 22
+	ExecTime: 243
+	fileID gotten: 22
 hello
 yello
 queue emtpy status; 0
@@ -1166,322 +1131,270 @@ queue value:
 	 remote server valid? propagation time: 4
 25
 return value:  2
-pushing: 0x7f8edf504280
-pushing: 0x7f8edf504160
+pushing: 0x7fe6064055a0
+pushing: 0x7fe6064057e0
+in main
+file request event
+	file: 16
+	ExecTime: 243
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405660
 in main
 file arrive event
-	file: 9
-	ExecTime: 235.4
-return value:  0
-in main
-file arrive event
-	file: 2
-	ExecTime: 236.4
+	file: 22
+	ExecTime: 244.6
 return value:  0
 in main
 file leave queue event
 	file: 25
-	ExecTime: 237.5
+	ExecTime: 246.5
 	fileID gotten: 25
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1631741288
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf504240
+pushing: 0x7fe6064055a0
+in main
+file enter queue event
+	file: 16
+	ExecTime: 247
+return value:  1
+pushing: 0x7fe6064057e0
 in main
 file arrive event
 	file: 25
-	ExecTime: 238.9
+	ExecTime: 247.9
 return value:  0
 in main
 file request event
-	file: 9
-	ExecTime: 240
+	file: 19
+	ExecTime: 251
 return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504240
-in main
-file arrive event
-	file: 9
-	ExecTime: 241.4
-return value:  0
-in main
-file request event
-	file: 8
-	ExecTime: 249
-return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf504240
-in main
-file enter queue event
-	file: 8
-	ExecTime: 253
-return value:  1
-pushing: 0x7f8edf504220
-in main
-file request event
-	file: 24
-	ExecTime: 256
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504240
+pushing: 0x7fe606808800
+pushing: 0x7fe6064055a0
 in main
 file leave queue event
-	file: 8
-	ExecTime: 256
-	fileID gotten: 8
+	file: 16
+	ExecTime: 251
+	fileID gotten: 16
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1769432174
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf504160
+pushing: 0x7fe606405800
 in main
 file arrive event
-	file: 8
-	ExecTime: 257.2
+	file: 16
+	ExecTime: 252.6
+return value:  0
+in main
+file request event
+	file: 34
+	ExecTime: 253
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405800
+in main
+file arrive event
+	file: 19
+	ExecTime: 253.4
 return value:  0
 in main
 file enter queue event
-	file: 24
-	ExecTime: 260
+	file: 34
+	ExecTime: 257
 return value:  1
-pushing: 0x7f8edf504160
+pushing: 0x7fe6064055a0
 in main
 file request event
-	file: 11
+	file: 34
+	ExecTime: 258
+return value:  1
+pushing: 0x7fe606808800
+in main
+file leave queue event
+	file: 34
+	ExecTime: 260
+	fileID gotten: 34
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 543716452
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe6064057e0
+in main
+file request event
+	file: 34
 	ExecTime: 261
 return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf504240
-in main
-file leave queue event
-	file: 24
-	ExecTime: 263
-	fileID gotten: 24
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf5041e0
+pushing: 0x7fe606809400
+pushing: 0x7fe6064055a0
 in main
 file arrive event
-	file: 24
-	ExecTime: 264.2
-return value:  0
-in main
-file enter queue event
-	file: 11
-	ExecTime: 265
-return value:  1
-pushing: 0x7f8edf5041e0
-in main
-file request event
-	file: 0
-	ExecTime: 268
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504240
-in main
-file leave queue event
-	file: 11
-	ExecTime: 268
-	fileID gotten: 11
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf504220
-in main
-file arrive event
-	file: 11
-	ExecTime: 269.2
-return value:  0
-in main
-file request event
 	file: 34
+	ExecTime: 261.2
+return value:  0
+in main
+file arrive event
+	file: 34
+	ExecTime: 262.2
+return value:  0
+in main
+file request event
+	file: 10
+	ExecTime: 264
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe6064055a0
+in main
+file arrive event
+	file: 10
+	ExecTime: 266
+return value:  0
+in main
+file request event
+	file: 10
 	ExecTime: 271
 return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf504220
+pushing: 0x7fe606809400
+pushing: 0x7fe6064055a0
+in main
+file arrive event
+	file: 10
+	ExecTime: 273
+return value:  0
+in main
+file request event
+	file: 6
+	ExecTime: 277
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe6064055a0
+in main
+file arrive event
+	file: 6
+	ExecTime: 278.2
+return value:  0
+in main
+file request event
+	file: 14
+	ExecTime: 282
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe6064055a0
+in main
+file request event
+	file: 38
+	ExecTime: 285
+return value:  2
+pushing: 0x7fe606808800
+pushing: 0x7fe606405660
 in main
 file enter queue event
-	file: 0
-	ExecTime: 272
+	file: 14
+	ExecTime: 286
 return value:  1
-pushing: 0x7f8edf5041e0
+pushing: 0x7fe606405850
+in main
+file arrive event
+	file: 38
+	ExecTime: 287.4
+return value:  0
 in main
 file leave queue event
-	file: 0
-	ExecTime: 271.5
-	fileID gotten: 0
+	file: 14
+	ExecTime: 290.5
+	fileID gotten: 14
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 171253821
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf504160
+pushing: 0x7fe6064057e0
 in main
 file arrive event
-	file: 0
-	ExecTime: 271.3
-return value:  0
-in main
-file arrive event
-	file: 34
-	ExecTime: 272.4
+	file: 14
+	ExecTime: 292.3
 return value:  0
 in main
 file request event
-	file: 8
-	ExecTime: 278
+	file: 39
+	ExecTime: 293
 return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504220
+pushing: 0x7fe606809400
+pushing: 0x7fe6064057e0
 in main
 file arrive event
-	file: 8
-	ExecTime: 279.2
+	file: 39
+	ExecTime: 294.2
 return value:  0
 in main
 file request event
-	file: 5
-	ExecTime: 283
-return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf504220
-in main
-file enter queue event
-	file: 5
-	ExecTime: 287
-return value:  1
-pushing: 0x7f8edf5041e0
-in main
-file request event
-	file: 32
-	ExecTime: 288
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504220
-in main
-file leave queue event
-	file: 5
-	ExecTime: 292
-	fileID gotten: 5
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf504160
-in main
-file enter queue event
-	file: 32
-	ExecTime: 292
-return value:  1
-pushing: 0x7f8edf704080
-in main
-file arrive event
-	file: 5
-	ExecTime: 294
-return value:  0
-in main
-file request event
-	file: 17
+	file: 28
 	ExecTime: 296
 return value:  2
-pushing: 0x7f8ee1008200
-pushing: 0x7f8edf7040a0
+pushing: 0x7fe606808800
+pushing: 0x7fe6064057e0
 in main
-file leave queue event
-	file: 32
-	ExecTime: 299
-	fileID gotten: 32
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf704130
+file request event
+	file: 1
+	ExecTime: 300
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405660
 in main
 file enter queue event
-	file: 17
+	file: 28
 	ExecTime: 300
 return value:  1
-pushing: 0x7f8edf704080
-in main
-file request event
-	file: 1
-	ExecTime: 301
-return value:  2
-pushing: 0x7f8ee1008e00
-pushing: 0x7f8edf7040a0
-in main
-file arrive event
-	file: 32
-	ExecTime: 301.8
-return value:  0
+pushing: 0x7fe606405870
 in main
 file leave queue event
-	file: 17
-	ExecTime: 304
-	fileID gotten: 17
+	file: 28
+	ExecTime: 303
+	fileID gotten: 28
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1868982630
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf7040c0
+pushing: 0x7fe606405850
 in main
 file enter queue event
 	file: 1
-	ExecTime: 305
+	ExecTime: 304
 return value:  1
-pushing: 0x7f8edf704080
+pushing: 0x7fe606405870
 in main
 file arrive event
-	file: 17
-	ExecTime: 305.6
+	file: 28
+	ExecTime: 304.2
 return value:  0
 in main
 file request event
-	file: 25
+	file: 35
 	ExecTime: 306
 return value:  2
-pushing: 0x7f8ee1008200
-pushing: 0x7f8edf7040c0
-in main
-file arrive event
-	file: 25
-	ExecTime: 307.4
-return value:  0
+pushing: 0x7fe606808800
+pushing: 0x7fe606405850
 in main
 file leave queue event
 	file: 1
@@ -1492,375 +1405,361 @@ yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1684955458
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf704150
+pushing: 0x7fe606506080
 in main
 file arrive event
 	file: 1
-	ExecTime: 309.2
+	ExecTime: 309.6
 return value:  0
-in main
-file request event
-	file: 26
-	ExecTime: 311
-return value:  2
-pushing: 0x7f8ee1008e00
-pushing: 0x7f8edf704150
-in main
-file enter queue event
-	file: 26
-	ExecTime: 315
-return value:  1
-pushing: 0x7f8edf7040a0
-in main
-file leave queue event
-	file: 26
-	ExecTime: 318
-	fileID gotten: 26
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf704080
-in main
-file request event
-	file: 19
-	ExecTime: 319
-return value:  2
-pushing: 0x7f8ee1008200
-pushing: 0x7f8edf7040a0
-in main
-file arrive event
-	file: 26
-	ExecTime: 319.2
-return value:  0
-in main
-file request event
-	file: 35
-	ExecTime: 323
-return value:  2
-pushing: 0x7f8ee1008e00
-pushing: 0x7f8edf704080
-in main
-file enter queue event
-	file: 19
-	ExecTime: 323
-return value:  1
-pushing: 0x7f8edf704240
 in main
 file enter queue event
 	file: 35
-	ExecTime: 327
-return value:  0
-in main
-file leave queue event
-	file: 19
-	ExecTime: 328
-	fileID gotten: 19
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 35
-	 remote server valid? propagation time: 4
-35
-return value:  2
-pushing: 0x7f8edf704200
-pushing: 0x7f8edf7040a0
-in main
-file arrive event
-	file: 19
-	ExecTime: 330
-return value:  0
+	ExecTime: 310
+return value:  1
+pushing: 0x7fe606405870
 in main
 file request event
-	file: 31
-	ExecTime: 331
+	file: 35
+	ExecTime: 310
+return value:  1
+pushing: 0x7fe606809400
+in main
+file request event
+	file: 21
+	ExecTime: 312
 return value:  2
-pushing: 0x7f8ee1008200
-pushing: 0x7f8edf704200
+pushing: 0x7fe607808200
+pushing: 0x7fe606604080
 in main
 file leave queue event
 	file: 35
-	ExecTime: 331
+	ExecTime: 313
 	fileID gotten: 35
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1952737655
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf704220
+pushing: 0x7fe6066040c0
+in main
+file arrive event
+	file: 21
+	ExecTime: 313.4
+return value:  0
+in main
+file request event
+	file: 37
+	ExecTime: 314
+return value:  2
+pushing: 0x7fe60700da00
+pushing: 0x7fe606506080
 in main
 file arrive event
 	file: 35
-	ExecTime: 332.2
+	ExecTime: 314.2
 return value:  0
 in main
 file arrive event
-	file: 31
-	ExecTime: 332.8
+	file: 37
+	ExecTime: 315.4
 return value:  0
 in main
 file request event
-	file: 20
-	ExecTime: 336
+	file: 33
+	ExecTime: 318
 return value:  2
-pushing: 0x7f8ee1008e00
-pushing: 0x7f8edf704200
-in main
-file request event
-	file: 19
-	ExecTime: 340
-return value:  2
-pushing: 0x7f8ee1008200
-pushing: 0x7f8edf4075b0
+pushing: 0x7fe607009200
+pushing: 0x7fe606506080
 in main
 file enter queue event
-	file: 20
-	ExecTime: 340
+	file: 33
+	ExecTime: 322
 return value:  1
-pushing: 0x7f8edf4071e0
+pushing: 0x7fe6065060c0
 in main
-file arrive event
-	file: 19
-	ExecTime: 342
-return value:  0
+file request event
+	file: 0
+	ExecTime: 323
+return value:  2
+pushing: 0x7fe606809400
+pushing: 0x7fe606405870
 in main
 file leave queue event
-	file: 20
-	ExecTime: 345.5
-	fileID gotten: 20
+	file: 33
+	ExecTime: 325
+	fileID gotten: 33
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 540876904
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf407200
-in main
-file request event
-	file: 20
-	ExecTime: 347
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf4071e0
+pushing: 0x7fe606405850
 in main
 file arrive event
-	file: 20
-	ExecTime: 347.7
+	file: 33
+	ExecTime: 326.2
+return value:  0
+in main
+file enter queue event
+	file: 0
+	ExecTime: 327
+return value:  1
+pushing: 0x7fe608904080
+in main
+file leave queue event
+	file: 0
+	ExecTime: 326.5
+	fileID gotten: 0
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 1869613618
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe6089040f0
+in main
+file arrive event
+	file: 0
+	ExecTime: 326.3
+return value:  0
+in main
+file request event
+	file: 22
+	ExecTime: 328
+return value:  2
+pushing: 0x7fe609008200
+pushing: 0x7fe6066040c0
+in main
+file arrive event
+	file: 22
+	ExecTime: 329.6
+return value:  0
+in main
+file request event
+	file: 3
+	ExecTime: 334
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066040c0
+in main
+file enter queue event
+	file: 3
+	ExecTime: 338
+return value:  1
+pushing: 0x7fe6066040e0
+in main
+file request event
+	file: 19
+	ExecTime: 341
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe6066040c0
+in main
+file request event
+	file: 25
+	ExecTime: 342
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe606604100
+in main
+file request event
+	file: 38
+	ExecTime: 343
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe606604120
+in main
+file arrive event
+	file: 25
+	ExecTime: 343.4
 return value:  0
 in main
 file arrive event
-	file: 20
+	file: 19
+	ExecTime: 343.4
+return value:  0
+in main
+file arrive event
+	file: 38
+	ExecTime: 345.4
+return value:  0
+in main
+file leave queue event
+	file: 3
+	ExecTime: 346
+	fileID gotten: 3
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 1869837161
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe606604080
+in main
+file arrive event
+	file: 3
 	ExecTime: 349.2
 return value:  0
 in main
 file request event
-	file: 1
+	file: 25
+	ExecTime: 350
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe606604080
+in main
+file arrive event
+	file: 25
+	ExecTime: 351.4
+return value:  0
+in main
+file request event
+	file: 25
 	ExecTime: 353
 return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf4071e0
+pushing: 0x7fe607808e00
+pushing: 0x7fe606604080
 in main
 file arrive event
-	file: 1
-	ExecTime: 354.2
+	file: 25
+	ExecTime: 354.4
 return value:  0
 in main
 file request event
-	file: 16
-	ExecTime: 361
+	file: 26
+	ExecTime: 357
 return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf4071e0
-in main
-file arrive event
-	file: 16
-	ExecTime: 363.4
-return value:  0
-in main
-file request event
-	file: 29
-	ExecTime: 368
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf4071e0
+pushing: 0x7fe607808200
+pushing: 0x7fe606604080
 in main
 file enter queue event
-	file: 29
-	ExecTime: 372
+	file: 26
+	ExecTime: 361
 return value:  1
-pushing: 0x7f8edf407600
-in main
-file request event
-	file: 32
-	ExecTime: 374
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf4071e0
+pushing: 0x7fe6066040e0
 in main
 file leave queue event
-	file: 29
-	ExecTime: 375.5
-	fileID gotten: 29
+	file: 26
+	ExecTime: 365
+	fileID gotten: 26
 hello
 yello
 queue emtpy status; 1
 queue value: 
 	size: 0
-	 top: 0
+	 top: 1634028910
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf407200
+pushing: 0x7fe6066040c0
 in main
 file arrive event
-	file: 32
-	ExecTime: 376.8
-return value:  0
-in main
-file arrive event
-	file: 29
-	ExecTime: 376.9
-return value:  0
-in main
-file request event
-	file: 20
-	ExecTime: 380
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407200
-in main
-file arrive event
-	file: 20
-	ExecTime: 382.2
-return value:  0
-in main
-file request event
-	file: 29
-	ExecTime: 385
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407200
-in main
-file arrive event
-	file: 29
-	ExecTime: 386.4
-return value:  0
-in main
-file request event
-	file: 21
-	ExecTime: 390
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407200
-in main
-file request event
-	file: 14
-	ExecTime: 393
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407600
-in main
-file enter queue event
-	file: 21
-	ExecTime: 394
-return value:  1
-pushing: 0x7f8edf407280
-in main
-file enter queue event
-	file: 14
-	ExecTime: 397
+	file: 26
+	ExecTime: 366.6
 return value:  0
 in main
 file request event
 	file: 7
-	ExecTime: 399
+	ExecTime: 370
 return value:  2
-pushing: 0x7f8ee1808200
-pushing: 0x7f8edf407600
+pushing: 0x7fe607808e00
+pushing: 0x7fe6066040c0
+in main
+file request event
+	file: 17
+	ExecTime: 374
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe606604100
 in main
 file enter queue event
 	file: 7
-	ExecTime: 403
-return value:  0
+	ExecTime: 374
+return value:  1
+pushing: 0x7fe606604200
 in main
-file leave queue event
-	file: 21
-	ExecTime: 406
-	fileID gotten: 21
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 2
-	 top: 14
-	 remote server valid? propagation time: 4
-14
-return value:  2
-pushing: 0x7f8edf4071e0
-pushing: 0x7f8edf4072d0
+file enter queue event
+	file: 17
+	ExecTime: 378
+return value:  0
 in main
 file request event
-	file: 9
-	ExecTime: 407
+	file: 36
+	ExecTime: 379
 return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407280
-in main
-file arrive event
-	file: 9
-	ExecTime: 408.4
-return value:  0
+pushing: 0x7fe607808e00
+pushing: 0x7fe606604100
 in main
 file leave queue event
-	file: 14
-	ExecTime: 409
-	fileID gotten: 14
+	file: 7
+	ExecTime: 381.5
+	fileID gotten: 7
 hello
 yello
 queue emtpy status; 0
 queue value: 
 	size: 1
-	 top: 7
+	 top: 17
 	 remote server valid? propagation time: 4
-7
+17
 return value:  2
-pushing: 0x7f8edf407260
-pushing: 0x7f8edf407320
+pushing: 0x7fe6066040e0
+pushing: 0x7fe606604270
 in main
-file request event
-	file: 13
-	ExecTime: 410
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf4072d0
-in main
-file arrive event
-	file: 14
-	ExecTime: 410.2
+file enter queue event
+	file: 36
+	ExecTime: 383
 return value:  0
 in main
 file arrive event
-	file: 21
-	ExecTime: 410.8
+	file: 7
+	ExecTime: 384.5
 return value:  0
 in main
 file leave queue event
-	file: 7
-	ExecTime: 412
-	fileID gotten: 7
+	file: 17
+	ExecTime: 385
+	fileID gotten: 17
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 1
+	 top: 36
+	 remote server valid? propagation time: 4
+36
+return value:  2
+pushing: 0x7fe6066041e0
+pushing: 0x7fe606604100
+in main
+file arrive event
+	file: 17
+	ExecTime: 386.4
+return value:  0
+in main
+file request event
+	file: 38
+	ExecTime: 387
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066041e0
+in main
+file leave queue event
+	file: 36
+	ExecTime: 388
+	fileID gotten: 36
 hello
 yello
 queue emtpy status; 1
@@ -1869,22 +1768,191 @@ queue value:
 	 top: 0
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf407200
+pushing: 0x7fe6066040c0
 in main
 file arrive event
-	file: 7
-	ExecTime: 413.2
+	file: 36
+	ExecTime: 389.2
+return value:  0
+in main
+file arrive event
+	file: 38
+	ExecTime: 389.4
+return value:  0
+in main
+file request event
+	file: 1
+	ExecTime: 393
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe6066041e0
+in main
+file arrive event
+	file: 1
+	ExecTime: 394.6
+return value:  0
+in main
+file request event
+	file: 6
+	ExecTime: 399
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066041e0
+in main
+file arrive event
+	file: 6
+	ExecTime: 400.2
+return value:  0
+in main
+file request event
+	file: 10
+	ExecTime: 403
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe6066041e0
+in main
+file arrive event
+	file: 10
+	ExecTime: 405
+return value:  0
+in main
+file request event
+	file: 22
+	ExecTime: 409
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066041e0
+in main
+file arrive event
+	file: 22
+	ExecTime: 410.6
+return value:  0
+in main
+file request event
+	file: 37
+	ExecTime: 412
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe6066041e0
+in main
+file arrive event
+	file: 37
+	ExecTime: 413.4
+return value:  0
+in main
+file request event
+	file: 38
+	ExecTime: 416
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066041e0
+in main
+file arrive event
+	file: 38
+	ExecTime: 418.4
+return value:  0
+in main
+file request event
+	file: 30
+	ExecTime: 424
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe6066041e0
+in main
+file request event
+	file: 29
+	ExecTime: 426
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe606604100
+in main
+file enter queue event
+	file: 30
+	ExecTime: 428
+return value:  1
+pushing: 0x7fe6066042f0
+in main
+file enter queue event
+	file: 29
+	ExecTime: 430
+return value:  0
+in main
+file request event
+	file: 13
+	ExecTime: 431
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe606604100
+in main
+file leave queue event
+	file: 30
+	ExecTime: 432.5
+	fileID gotten: 30
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 1
+	 top: 29
+	 remote server valid? propagation time: 4
+29
+return value:  2
+pushing: 0x7fe6066040c0
+pushing: 0x7fe606604360
+in main
+file request event
+	file: 10
+	ExecTime: 434
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066042f0
+in main
+file arrive event
+	file: 30
+	ExecTime: 434.3
 return value:  0
 in main
 file enter queue event
 	file: 13
-	ExecTime: 414
-return value:  1
-pushing: 0x7f8edf407200
+	ExecTime: 435
+return value:  0
+in main
+file arrive event
+	file: 10
+	ExecTime: 436
+return value:  0
+in main
+file leave queue event
+	file: 29
+	ExecTime: 436
+	fileID gotten: 29
+hello
+yello
+queue emtpy status; 0
+queue value: 
+	size: 1
+	 top: 13
+	 remote server valid? propagation time: 4
+13
+return value:  2
+pushing: 0x7fe606604200
+pushing: 0x7fe606604100
+in main
+file arrive event
+	file: 29
+	ExecTime: 437.4
+return value:  0
+in main
+file request event
+	file: 0
+	ExecTime: 438
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe606604200
 in main
 file leave queue event
 	file: 13
-	ExecTime: 418.5
+	ExecTime: 439.5
 	fileID gotten: 13
 hello
 yello
@@ -1894,499 +1962,22 @@ queue value:
 	 top: 0
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf407340
+pushing: 0x7fe6066041e0
 in main
 file arrive event
 	file: 13
-	ExecTime: 420.3
+	ExecTime: 440.9
 return value:  0
-in main
-file request event
-	file: 5
-	ExecTime: 424
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407340
-in main
-file arrive event
-	file: 5
-	ExecTime: 426
-return value:  0
-in main
-file request event
-	file: 6
-	ExecTime: 427
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407340
-in main
-file request event
-	file: 24
-	ExecTime: 429
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407260
 in main
 file enter queue event
-	file: 6
-	ExecTime: 431
-return value:  1
-pushing: 0x7f8edf4073c0
-in main
-file enter queue event
-	file: 24
-	ExecTime: 433
-return value:  0
-in main
-file leave queue event
-	file: 6
-	ExecTime: 435
-	fileID gotten: 6
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 24
-	 remote server valid? propagation time: 4
-24
-return value:  2
-pushing: 0x7f8edf407320
-pushing: 0x7f8edf407340
-in main
-file request event
-	file: 14
-	ExecTime: 436
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf4073c0
-in main
-file arrive event
-	file: 6
-	ExecTime: 436.6
-return value:  0
-in main
-file arrive event
-	file: 14
-	ExecTime: 437.2
-return value:  0
-in main
-file leave queue event
-	file: 24
-	ExecTime: 438
-	fileID gotten: 24
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407200
-in main
-file arrive event
-	file: 24
-	ExecTime: 439.2
-return value:  0
-in main
-file request event
-	file: 18
+	file: 0
 	ExecTime: 442
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407200
-in main
-file request event
-	file: 34
-	ExecTime: 444
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407340
-in main
-file enter queue event
-	file: 18
-	ExecTime: 446
 return value:  1
-pushing: 0x7f8edf407430
-in main
-file enter queue event
-	file: 34
-	ExecTime: 448
-return value:  0
-in main
-file leave queue event
-	file: 18
-	ExecTime: 450
-	fileID gotten: 18
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 34
-	 remote server valid? propagation time: 4
-34
-return value:  2
-pushing: 0x7f8edf407320
-pushing: 0x7f8edf407450
-in main
-file arrive event
-	file: 18
-	ExecTime: 451.6
-return value:  0
-in main
-file request event
-	file: 7
-	ExecTime: 453
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407320
-in main
-file leave queue event
-	file: 34
-	ExecTime: 453.5
-	fileID gotten: 34
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407410
-in main
-file arrive event
-	file: 7
-	ExecTime: 454.2
-return value:  0
-in main
-file arrive event
-	file: 34
-	ExecTime: 454.9
-return value:  0
-in main
-file request event
-	file: 32
-	ExecTime: 457
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407410
-in main
-file arrive event
-	file: 32
-	ExecTime: 459.8
-return value:  0
-in main
-file request event
-	file: 10
-	ExecTime: 462
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407410
-in main
-file enter queue event
-	file: 10
-	ExecTime: 466
-return value:  1
-pushing: 0x7f8edf407450
-in main
-file request event
-	file: 13
-	ExecTime: 469
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407410
-in main
-file leave queue event
-	file: 10
-	ExecTime: 469
-	fileID gotten: 10
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407320
-in main
-file arrive event
-	file: 10
-	ExecTime: 470.2
-return value:  0
-in main
-file arrive event
-	file: 13
-	ExecTime: 470.8
-return value:  0
-in main
-file request event
-	file: 28
-	ExecTime: 471
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407410
-in main
-file enter queue event
-	file: 28
-	ExecTime: 475
-return value:  1
-pushing: 0x7f8edf407450
-in main
-file leave queue event
-	file: 28
-	ExecTime: 478.5
-	fileID gotten: 28
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407320
-in main
-file request event
-	file: 26
-	ExecTime: 479
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407450
-in main
-file arrive event
-	file: 28
-	ExecTime: 479.9
-return value:  0
-in main
-file enter queue event
-	file: 26
-	ExecTime: 483
-return value:  1
-pushing: 0x7f8edf407320
-in main
-file request event
-	file: 6
-	ExecTime: 484
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407450
-in main
-file arrive event
-	file: 6
-	ExecTime: 485.6
-return value:  0
-in main
-file leave queue event
-	file: 26
-	ExecTime: 486
-	fileID gotten: 26
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407520
-in main
-file arrive event
-	file: 26
-	ExecTime: 487.2
-return value:  0
-in main
-file request event
-	file: 35
-	ExecTime: 493
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407520
-in main
-file arrive event
-	file: 35
-	ExecTime: 494.2
-return value:  0
-in main
-file request event
-	file: 30
-	ExecTime: 498
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407520
-in main
-file enter queue event
-	file: 30
-	ExecTime: 502
-return value:  1
-pushing: 0x7f8edf407680
-in main
-file request event
-	file: 28
-	ExecTime: 505
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407520
-in main
-file arrive event
-	file: 28
-	ExecTime: 506.4
-return value:  0
-in main
-file leave queue event
-	file: 30
-	ExecTime: 507.5
-	fileID gotten: 30
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf407320
-in main
-file arrive event
-	file: 30
-	ExecTime: 509.7
-return value:  0
-in main
-file request event
-	file: 26
-	ExecTime: 512
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf407320
-in main
-file arrive event
-	file: 26
-	ExecTime: 513.2
-return value:  0
-in main
-file request event
-	file: 8
-	ExecTime: 519
-return value:  2
-pushing: 0x7f8edf80c000
-pushing: 0x7f8edf407320
-in main
-file request event
-	file: 11
-	ExecTime: 521
-return value:  2
-pushing: 0x7f8edf80cc00
-pushing: 0x7f8edf4076d0
-in main
-file enter queue event
-	file: 8
-	ExecTime: 523
-return value:  1
-pushing: 0x7f8edf407710
-in main
-file enter queue event
-	file: 11
-	ExecTime: 525
-return value:  0
-in main
-file leave queue event
-	file: 8
-	ExecTime: 526
-	fileID gotten: 8
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 11
-	 remote server valid? propagation time: 4
-11
-return value:  2
-pushing: 0x7f8edf407670
-pushing: 0x7f8edf407320
-in main
-file arrive event
-	file: 8
-	ExecTime: 527.2
-return value:  0
-in main
-file leave queue event
-	file: 11
-	ExecTime: 529
-	fileID gotten: 11
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf4076f0
-in main
-file arrive event
-	file: 11
-	ExecTime: 530.2
-return value:  0
-in main
-file request event
-	file: 4
-	ExecTime: 531
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504310
-in main
-file enter queue event
-	file: 4
-	ExecTime: 535
-return value:  1
-pushing: 0x7f8edf504350
-in main
-file request event
-	file: 0
-	ExecTime: 537
-return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf504310
-in main
-file leave queue event
-	file: 4
-	ExecTime: 538
-	fileID gotten: 4
-hello
-yello
-queue emtpy status; 1
-queue value: 
-	size: 0
-	 top: 0
-	 remote server valid? propagation time: 4
-return value:  1
-pushing: 0x7f8edf504330
-in main
-file arrive event
-	file: 4
-	ExecTime: 539.2
-return value:  0
-in main
-file request event
-	file: 1
-	ExecTime: 540
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf504330
-in main
-file enter queue event
-	file: 0
-	ExecTime: 541
-return value:  1
-pushing: 0x7f8edf5043c0
+pushing: 0x7fe6066041e0
 in main
 file leave queue event
 	file: 0
-	ExecTime: 540.5
+	ExecTime: 441.5
 	fileID gotten: 0
 hello
 yello
@@ -2396,30 +1987,49 @@ queue value:
 	 top: 0
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf5042e0
+pushing: 0x7fe606604360
 in main
 file arrive event
 	file: 0
-	ExecTime: 540.3
+	ExecTime: 441.3
 return value:  0
 in main
 file request event
-	file: 29
-	ExecTime: 544
+	file: 23
+	ExecTime: 443
 return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf5042e0
+pushing: 0x7fe607808200
+pushing: 0x7fe606604360
+in main
+file request event
+	file: 13
+	ExecTime: 446
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe6066041e0
 in main
 file enter queue event
-	file: 1
-	ExecTime: 544
+	file: 23
+	ExecTime: 447
 return value:  1
-pushing: 0x7f8edf504080
+pushing: 0x7fe606604200
+in main
+file arrive event
+	file: 13
+	ExecTime: 447.4
+return value:  0
+in main
+file request event
+	file: 30
+	ExecTime: 451
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe6066041e0
 in main
 file leave queue event
-	file: 1
-	ExecTime: 547
-	fileID gotten: 1
+	file: 23
+	ExecTime: 451.5
+	fileID gotten: 23
 hello
 yello
 queue emtpy status; 1
@@ -2428,30 +2038,42 @@ queue value:
 	 top: 0
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf504350
-in main
-file enter queue event
-	file: 29
-	ExecTime: 548
-return value:  1
-pushing: 0x7f8edf504080
-in main
-file request event
-	file: 22
-	ExecTime: 548
-return value:  2
-pushing: 0x7f8ee0008200
-pushing: 0x7f8edf5042e0
+pushing: 0x7fe606604100
 in main
 file arrive event
-	file: 1
-	ExecTime: 548.2
+	file: 30
+	ExecTime: 452.8
 return value:  0
 in main
+file arrive event
+	file: 23
+	ExecTime: 453.3
+return value:  0
+in main
+file request event
+	file: 18
+	ExecTime: 457
+return value:  2
+pushing: 0x7fe607808e00
+pushing: 0x7fe606604100
+in main
+file enter queue event
+	file: 18
+	ExecTime: 461
+return value:  1
+pushing: 0x7fe606604200
+in main
+file request event
+	file: 28
+	ExecTime: 463
+return value:  2
+pushing: 0x7fe607808200
+pushing: 0x7fe606604100
+in main
 file leave queue event
-	file: 29
-	ExecTime: 551.5
-	fileID gotten: 29
+	file: 18
+	ExecTime: 464
+	fileID gotten: 18
 hello
 yello
 queue emtpy status; 1
@@ -2460,88 +2082,75 @@ queue value:
 	 top: 0
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf5043c0
-in main
-file enter queue event
-	file: 22
-	ExecTime: 552
-return value:  1
-pushing: 0x7f8edf504080
+pushing: 0x7fe6066041e0
 in main
 file request event
-	file: 15
-	ExecTime: 552
+	file: 4
+	ExecTime: 465
 return value:  2
-pushing: 0x7f8ee0008e00
-pushing: 0x7f8edf5042e0
+pushing: 0x7fe607808e00
+pushing: 0x7fe6088040a0
 in main
 file arrive event
-	file: 29
-	ExecTime: 552.9
+	file: 18
+	ExecTime: 465.2
 return value:  0
 in main
-file request event
-	file: 9
-	ExecTime: 554
+file enter queue event
+	file: 28
+	ExecTime: 467
 return value:  1
-pushing: 0x7f8edf5043c0
+pushing: 0x7fe6088040c0
 in main
 file enter queue event
-	file: 15
-	ExecTime: 556
+	file: 4
+	ExecTime: 469
 return value:  0
 in main
 file leave queue event
-	file: 22
-	ExecTime: 556.5
-	fileID gotten: 22
+	file: 28
+	ExecTime: 470
+	fileID gotten: 28
 hello
 yello
 queue emtpy status; 0
 queue value: 
 	size: 1
-	 top: 15
+	 top: 4
 	 remote server valid? propagation time: 4
-15
+4
 return value:  2
-pushing: 0x7f8edf5040d0
-pushing: 0x7f8edf5042e0
+pushing: 0x7fe608804110
+pushing: 0x7fe608804130
 in main
-file enter queue event
-	file: 9
-	ExecTime: 558
+file request event
+	file: 25
+	ExecTime: 471
+return value:  2
+pushing: 0x7fe609808200
+pushing: 0x7fe6088040c0
+in main
+file request event
+	file: 20
+	ExecTime: 471
+return value:  2
+pushing: 0x7fe609808e00
+pushing: 0x7fe608804150
+in main
+file arrive event
+	file: 28
+	ExecTime: 471.2
 return value:  0
 in main
 file arrive event
-	file: 22
-	ExecTime: 558.3
+	file: 25
+	ExecTime: 472.4
 return value:  0
 in main
 file leave queue event
-	file: 15
-	ExecTime: 560
-	fileID gotten: 15
-hello
-yello
-queue emtpy status; 0
-queue value: 
-	size: 1
-	 top: 9
-	 remote server valid? propagation time: 4
-9
-return value:  2
-pushing: 0x7f8edf504120
-pushing: 0x7f8edf5043c0
-in main
-file arrive event
-	file: 15
-	ExecTime: 561.4
-return value:  0
-in main
-file leave queue event
-	file: 9
-	ExecTime: 563.5
-	fileID gotten: 9
+	file: 4
+	ExecTime: 474
+	fileID gotten: 4
 hello
 yello
 queue emtpy status; 1
@@ -2550,14 +2159,94 @@ queue value:
 	 top: 0
 	 remote server valid? propagation time: 4
 return value:  1
-pushing: 0x7f8edf504140
+pushing: 0x7fe6065062b0
+in main
+file enter queue event
+	file: 20
+	ExecTime: 475
+return value:  1
+pushing: 0x7fe6065060c0
 in main
 file arrive event
-	file: 9
-	ExecTime: 564.9
+	file: 4
+	ExecTime: 475.6
 return value:  0
-final time: 564.9
-avg time: 5.649
+in main
+file leave queue event
+	file: 20
+	ExecTime: 478
+	fileID gotten: 20
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 0
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe6065060e0
+in main
+file arrive event
+	file: 20
+	ExecTime: 479.2
+return value:  0
+in main
+file request event
+	file: 29
+	ExecTime: 482
+return value:  2
+pushing: 0x7fe607009200
+pushing: 0x7fe6065060e0
+in main
+file arrive event
+	file: 29
+	ExecTime: 483.4
+return value:  0
+in main
+file request event
+	file: 37
+	ExecTime: 490
+return value:  2
+pushing: 0x7fe60700da00
+pushing: 0x7fe6065060e0
+in main
+file request event
+	file: 24
+	ExecTime: 491
+return value:  1
+pushing: 0x7fe6065060c0
+in main
+file arrive event
+	file: 37
+	ExecTime: 491.4
+return value:  0
+in main
+file enter queue event
+	file: 24
+	ExecTime: 495
+return value:  1
+pushing: 0x7fe6065060e0
+in main
+file leave queue event
+	file: 24
+	ExecTime: 512
+	fileID gotten: 24
+hello
+yello
+queue emtpy status; 1
+queue value: 
+	size: 0
+	 top: 0
+	 remote server valid? propagation time: 4
+return value:  1
+pushing: 0x7fe606506340
+in main
+file arrive event
+	file: 24
+	ExecTime: 518.8
+return value:  0
+final time: 518.8
+avg time: 5.188
 
 Testing FIFO
 Get File 1: 3
