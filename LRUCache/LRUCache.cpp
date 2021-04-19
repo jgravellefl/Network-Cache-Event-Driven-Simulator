@@ -83,7 +83,10 @@ int DoublyLinkedList::remove_last_file() {
 }
 
 LRUCache::LRUCache(int capacity) {
+    cout << "capacity input" << endl;
+    cout << capacity << endl;
     this->capacity = capacity;
+    cout << this->capacity << endl;
     this->currSize = 0;
     this->fileLinkedList = new DoublyLinkedList();
     this->fileMap = map<int, File*>();

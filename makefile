@@ -6,4 +6,4 @@ run: a.out
 	-./a.out > output.txt
 
 clean: 
-	rm main *.o *.out
+	rm *.o *.out
