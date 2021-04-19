@@ -1,3 +1,10 @@
+cacheCapacity
+800000
+cache Capacity
+capacity input
+800000
+800000
+0
 --------------------------------------
 
 iter #: 1
@@ -19,11 +26,18 @@ capacity input
 800000
 800000
 0
+cacheCapacity
+800000
+cache Capacity
+capacity input
+800000
+800000
+0
 cache capacity
 0
 Running: LRU
-final time: 4.78185e+09
-avg time: 478185
+final time: 5.06773e+09
+avg time: 506773
 cache Hit Rate: 0%
 cache misses: 10000
 
@@ -38,8 +52,8 @@ capacity input
 cache capacity
 0
 Running: LRU
-final time: 4.64511e+09
-avg time: 464511
+final time: 5.11838e+09
+avg time: 511838
 cache Hit Rate: 0%
 cache misses: 10000
 
@@ -54,23 +68,14 @@ capacity input
 cache capacity
 0
 Running: LRU
-final time: 4.65894e+09
-avg time: 465894
+final time: 5.16426e+09
+avg time: 516426
 cache Hit Rate: 0%
 cache misses: 10000
 
 
-average of LRU time's: 469530
+average of LRU time's: 511679
 LRU average hit rate: 0%
-
-
-cache capacity
-0
-Running: FIFO
-final time: 4.92735e+09
-avg time: 492735
-cache Hit Rate: 0%
-cache misses: 10000
 
 
 cache capacity

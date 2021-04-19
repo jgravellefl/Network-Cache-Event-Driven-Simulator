@@ -93,6 +93,11 @@ int main(){
     int fifoBandwidth = stoi(fileInput[7]);
     int poissonMean[3] = {30, 150, 500};
     string cacheType = fileInput[10];
+    cout << "cacheCapacity" << endl;
+                            cout << cacheCapacity[0] << endl;
+                            cout << "cache Capacity" << endl;
+                            Cache* _Cache = new LRUCache(cacheCapacity[0]);
+                            cout << _Cache->capacity << endl;
 
     for (int p = 0; p < sizeof(paretoShape)/sizeof(paretoShape[0]); p++){
         for (int c = 0; c < sizeof(cacheCapacity)/sizeof(cacheCapacity[0]); c++){
@@ -119,17 +124,25 @@ int main(){
                     double paretoScale = (paretoShape[p]-1.0)/paretoShape[p] * paretoMean;
 
                     RemoteServer* remoteServer = new RemoteServer(propagationTime, numFiles, paretoShape[p], paretoScale, cacheCapacity[c]); // Remote Server with propagation time = 400
-    
+                    // for (int i=0; i < numFiles; i++){
+                    //     cout << "file: " << i << " - size - " << remoteServer->getFile(i) << endl;
+                    // }
+
                     FileSelector* fileSelector = new FileSelector(numFiles, paretoShape[p], paretoScale);
+
+                    cout << "cacheCapacity" << endl;
+                            cout << cacheCapacity[c] << endl;
+                            cout << "cache Capacity" << endl;
+                            _Cache = new LRUCache(cacheCapacity[c]);
+                            cout << _Cache->capacity << endl;
 
                     float avg = 0;
                     float hitRate = 0.0;
-                    if (cacheType.compare("ALL") == 0){
                         for (int i = 0; i < 3; i++) {
                             cout << "cacheCapacity" << endl;
                             cout << cacheCapacity[c] << endl;
                             cout << "cache Capacity" << endl;
-                            Cache* _Cache = new LRUCache(cacheCapacity[c]);
+                            _Cache = new LRUCache(cacheCapacity[c]);
                             cout << _Cache->capacity << endl;
                             Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests[n], poissonMean[pm], 0.0, 0);
                             float* temp = runEvents(ourConstants, "LRU", numRequests[n]);
@@ -172,7 +185,7 @@ int main(){
                         cout << "Second-Chance average hit rate: " << hitRate/3 << "%" << endl;
                         cout << endl;
                         cout << endl;        
-                    }
+                    
                     delete remoteServer;
                     delete fileSelector;
                 }
