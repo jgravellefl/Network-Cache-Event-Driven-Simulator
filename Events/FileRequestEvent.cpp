@@ -25,6 +25,7 @@ int FileRequestEvent::process(Event** returnEvents){
 			returnEvents[1] = new FileArriveEvent(this->initTime, this->execTime + (this->constants->remoteServer->getFile(this->fileId)/this->constants->cacheBandwidth),this->fileId ,this->constants);
 		}
 		else{
+			this->constants->cacheMisses += 1;
 			if (this->constants->remoteServer->queuePop.count(this->fileId) == 0){
 				returnEvents[1] = new FileEnterQueueEvent(this->initTime, this->execTime + this->constants->remoteServer->propagationTime, this->fileId, this->constants);
 				this->constants->remoteServer->queuePop.insert(this->fileId);
@@ -43,6 +44,7 @@ int FileRequestEvent::process(Event** returnEvents){
 			returnEvents[0] = new FileArriveEvent(this->initTime, this->execTime + (this->constants->remoteServer->getFile(this->fileId)/this->constants->cacheBandwidth),this->fileId ,this->constants);
 		}
 		else{
+			this->constants->cacheMisses += 1;
 			if (this->constants->remoteServer->queuePop.count(this->fileId) == 0){
 				returnEvents[0] = new FileEnterQueueEvent(this->initTime, this->execTime + this->constants->remoteServer->propagationTime, this->fileId, this->constants);
 				this->constants->remoteServer->queuePop.insert(this->fileId);
