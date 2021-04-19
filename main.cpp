@@ -94,8 +94,6 @@ int main(){
     int poissonMean[3] = {30, 150, 500};
     string cacheType = fileInput[10];
 
-    int currCacheCapacity = 0;
-
     for (int p = 0; p < sizeof(paretoShape)/sizeof(paretoShape[0]); p++){
         for (int c = 0; c < sizeof(cacheCapacity)/sizeof(cacheCapacity[0]); c++){
             for (int n = 0; n < sizeof(numRequests)/sizeof(numRequests[0]); n++){
@@ -116,15 +114,13 @@ int main(){
                     cout << endl;
                     cout << endl;
     
-                    currCacheCapacity = cacheCapacity[c];
+                    int currCacheCapacity = cacheCapacity[c];
 
-    
                     double paretoScale = (paretoShape[p]-1.0)/paretoShape[p] * paretoMean;
 
                     RemoteServer* remoteServer = new RemoteServer(propagationTime, numFiles, paretoShape[p], paretoScale, cacheCapacity[c]); // Remote Server with propagation time = 400
     
                     FileSelector* fileSelector = new FileSelector(numFiles, paretoShape[p], paretoScale);
-
 
                     float avg = 0;
                     float hitRate = 0.0;
@@ -133,7 +129,7 @@ int main(){
                             cout << "cacheCapacity" << endl;
                             cout << cacheCapacity[c] << endl;
                             cout << "cache Capacity" << endl;
-                            Cache* _Cache = new LRUCache(currCacheCapacity);
+                            Cache* _Cache = new LRUCache(cacheCapacity[c]);
                             cout << _Cache->capacity << endl;
                             Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests[n], poissonMean[pm], 0.0, 0);
                             float* temp = runEvents(ourConstants, "LRU", numRequests[n]);
