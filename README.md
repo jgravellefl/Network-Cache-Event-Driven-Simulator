@@ -20,3 +20,8 @@ The other values can be changed, but they may cause nonconclusive results and dr
 
 ###### System Requirements:
 Requires C++ and the GNU scientific library.
+***
+###### Output:
+In the output.txt file, you will see the cache replacement policy used in that run, followed by the average response time, cache hit ratet, and cache misses. For our report we would run the cache replacement policies through multiple iterations and get those averages to see overall what to expect from each policy, but the program will now only go through each requested cache replacement policy once. Here is an example output if __type__ is set to ALL:
+
+![image](images/input.png) ![image](images/output.png)
