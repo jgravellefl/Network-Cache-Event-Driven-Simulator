@@ -43,13 +43,11 @@ float* runEvents(Constants* constants, string name, int initRequests){
         }
     }
     cout << "Running: " << name << endl;
-    cout << "final time: " << constants->totalTime << endl;
     float avgTime = constants->totalTime/initRequests;
-    cout << "avg time: " << avgTime << endl;
+    cout << "Average response time: " << avgTime << endl;
     float cacheHitRate = (1-float(constants->cacheMisses)/float(initRequests));
-    cout << "cache Hit Rate: " << cacheHitRate << "%" << endl;
-    cout << "cache misses: " << constants->cacheMisses << endl;
-    cout << endl;
+    cout << "Cache hit rate: " << cacheHitRate << "%" << endl;
+    cout << "Cache misses: " << constants->cacheMisses << endl;
     cout << endl;
     returns[0] = avgTime;
     returns[1] = cacheHitRate;
@@ -111,10 +109,8 @@ int main(){
             // _Cache->~Cache();
             delete _Cache;
         }
-        cout << "average of LRU time's: " << avg/3 << endl;
-        cout << "LRU average hit rate: " << hitRate/3 << "%" << endl;
-        cout << endl;
-        cout << endl;
+        cout << "Average of LRU time's: " << avg/3 << endl;
+        cout << "LRU average hit rate: " << hitRate/3 << "%\n\n" << endl;
         avg = 0;
         hitRate = 0.0;
         for (int i = 0; i < 3; i++) {
@@ -126,10 +122,8 @@ int main(){
             delete ourConstants;
             delete _Cache;
         }
-        cout << "average of FIFO time's: " << avg/3 << endl;
-        cout << "FIFO average hit rate: " << hitRate/3 << "%" << endl;
-        cout << endl;
-        cout << endl;
+        cout << "Average of FIFO time's: " << avg/3 << endl;
+        cout << "FIFO average hit rate: " << hitRate/3 << "%\n\n" << endl;
         avg = 0;
         hitRate = 0.0;
         for (int i = 0; i < 3; i++) {
@@ -141,10 +135,8 @@ int main(){
             delete ourConstants;
             delete _Cache;
         }
-        cout << "average of SecondChance time's: " << avg/3 << endl;
-        cout << "Second-Chance average hit rate: " << hitRate/3 << "%" << endl;
-        cout << endl;
-        cout << endl;        
+        cout << "Average of Second-Chance time's: " << avg/3 << endl;
+        cout << "Second-Chance average hit rate: " << hitRate/3 << "%\n\n" << endl;
     }
     else {
         string name = "";
