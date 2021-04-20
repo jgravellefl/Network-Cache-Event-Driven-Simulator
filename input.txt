@@ -1,11 +1,11 @@
 paretoMean (Bytes) = 1000
 paretoShape = 2.0
-cacheCapacity (Bytes) = 4000000
-numFiles = 10000
+cacheCapacity (Bytes) = 400000
+numFiles = 1000
 numRequests = 10000
 propagationTime (ms) = 400
 cacheBandwidth (Mb/s) = 1000
 fifoBandwidth (Mb/s) = 15
-poissonMean (ms) = 80
-//options = ALL, SECOND-CHANCE, FIFO, LRU. All means to run the simulation for each cache type, whereas other options will just run that option.
+poissonMean (ms) = 600
+//options = ALL, SECOND-CHANCE, FIFO, LRU. ALL means to run the simulation for each cache type, whereas other options will just run that option.
 type = ALL
