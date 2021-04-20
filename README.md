@@ -17,3 +17,6 @@ For example, you can switch __pareto shape__ from 2.0 to 3.0:
 ![image](images/prechangePareto.png) ![image](images/postchangePareto.png)
 
 The other values can be changed, but they may cause nonconclusive results and dramatically increase the runtime.
+
+###### System Requirements:
+Requires C++ and the GNU scientific library.
