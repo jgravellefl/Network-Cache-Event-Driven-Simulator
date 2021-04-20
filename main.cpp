@@ -75,17 +75,19 @@ int main(){
     }
 
     else cout << "Unable to open file";
-
-    double paretoMean = stod(fileInput[0]);
+    //multiply by 8 to convert from bits to bytes..
+    double paretoMean = stod(fileInput[0]) * 8;
     double paretoShape = stod(fileInput[1]);
     double paretoScale = (paretoShape-1.0)/paretoShape * paretoMean;
-    int cacheCapacity = stoi(fileInput[2]);
+    //multiply by 8 to convert from bits to bytes..
+    int cacheCapacity = stoi(fileInput[2]) * 8;
     int numFiles = stoi(fileInput[3]);
     int numRequests = stoi(fileInput[4]);
     int propagationTime = stoi(fileInput[5]);
     int initRequests = numRequests;
-    int cacheBandwidth = stoi(fileInput[6]);
-    int fifoBandwidth = stoi(fileInput[7]);
+    //multiply by 1000 to convert from Mb/s to b/ms
+    int cacheBandwidth = stoi(fileInput[6]) * 1000;
+    int fifoBandwidth = stoi(fileInput[7]) * 1000;
     int poissonMean = stoi(fileInput[8]);
     string cacheType = fileInput[10];
 
@@ -99,7 +101,7 @@ int main(){
     float avg = 0;
     float hitRate = 0.0;
     if (cacheType.compare("ALL") == 0){
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             _Cache = new LRUCache(cacheCapacity);
             Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
             float* temp = runEvents(ourConstants, "LRU", numRequests);
@@ -109,40 +111,38 @@ int main(){
             // _Cache->~Cache();
             delete _Cache;
         }
-        cout << "average of LRU time's: " << avg/5 << endl;
-        cout << "LRU average hit rate: " << hitRate/5 << "%" << endl;
+        cout << "average of LRU time's: " << avg/3 << endl;
+        cout << "LRU average hit rate: " << hitRate/3 << "%" << endl;
         cout << endl;
         cout << endl;
         avg = 0;
         hitRate = 0.0;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             _Cache = new FIFOCache(cacheCapacity);
             Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
             float* temp = runEvents(ourConstants, "FIFO", numRequests);
             avg += temp[0];
             hitRate += temp[1];
             delete ourConstants;
-            // _Cache->~Cache();
             delete _Cache;
         }
-        cout << "average of FIFO time's: " << avg/5 << endl;
-        cout << "FIFO average hit rate: " << hitRate/5 << "%" << endl;
+        cout << "average of FIFO time's: " << avg/3 << endl;
+        cout << "FIFO average hit rate: " << hitRate/3 << "%" << endl;
         cout << endl;
         cout << endl;
         avg = 0;
         hitRate = 0.0;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
         _Cache = new SecondChanceCache(cacheCapacity);
             Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
             float* temp = runEvents(ourConstants, "Second-Chance", numRequests);
             avg += temp[0];
             hitRate += temp[1];
             delete ourConstants;
-            // _Cache->~Cache();
             delete _Cache;
         }
-        cout << "average of SecondChance time's: " << avg/5 << endl;
-        cout << "Second-Chance average hit rate: " << hitRate/5 << "%" << endl;
+        cout << "average of SecondChance time's: " << avg/3 << endl;
+        cout << "Second-Chance average hit rate: " << hitRate/3 << "%" << endl;
         cout << endl;
         cout << endl;        
     }
@@ -168,5 +168,9 @@ int main(){
         runEvents(ourConstants, name, numRequests);
         delete ourConstants;
     }
+
+    delete remoteServer;
+    delete fileSelector;
+
     return 0;
 }
