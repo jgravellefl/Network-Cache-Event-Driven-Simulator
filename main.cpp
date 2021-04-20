@@ -99,44 +99,26 @@ int main(){
     float avg = 0;
     float hitRate = 0.0;
     if (cacheType.compare("ALL") == 0){
-        for (int i = 0; i < 3; i++) {
-            _Cache = new LRUCache(cacheCapacity);
-            Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
-            float* temp = runEvents(ourConstants, "LRU", numRequests);
-            avg += temp[0];
-            hitRate += temp[1];
-            delete ourConstants;
-            // _Cache->~Cache();
-            delete _Cache;
-        }
-        cout << "Average of LRU time's: " << avg/3 << endl;
-        cout << "LRU average hit rate: " << hitRate/3 << "%\n\n" << endl;
-        avg = 0;
-        hitRate = 0.0;
-        for (int i = 0; i < 3; i++) {
-            _Cache = new FIFOCache(cacheCapacity);
-            Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
-            float* temp = runEvents(ourConstants, "FIFO", numRequests);
-            avg += temp[0];
-            hitRate += temp[1];
-            delete ourConstants;
-            delete _Cache;
-        }
-        cout << "Average of FIFO time's: " << avg/3 << endl;
-        cout << "FIFO average hit rate: " << hitRate/3 << "%\n\n" << endl;
-        avg = 0;
-        hitRate = 0.0;
-        for (int i = 0; i < 3; i++) {
+        //LRU
+        _Cache = new LRUCache(cacheCapacity);
+        Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
+        float* temp = runEvents(ourConstants, "LRU", numRequests);
+        delete ourConstants;
+        delete _Cache;
+
+        //FIFO
+        _Cache = new FIFOCache(cacheCapacity);
+        ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
+        temp = runEvents(ourConstants, "FIFO", numRequests);
+        delete ourConstants;
+        delete _Cache;
+
+        //Second-Chance
         _Cache = new SecondChanceCache(cacheCapacity);
-            Constants* ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
-            float* temp = runEvents(ourConstants, "Second-Chance", numRequests);
-            avg += temp[0];
-            hitRate += temp[1];
-            delete ourConstants;
-            delete _Cache;
-        }
-        cout << "Average of Second-Chance time's: " << avg/3 << endl;
-        cout << "Second-Chance average hit rate: " << hitRate/3 << "%\n\n" << endl;
+        ourConstants = new Constants(_Cache, fifoBandwidth, cacheBandwidth, remoteServer, fileSelector , numRequests, poissonMean, 0.0, 0);
+        temp = runEvents(ourConstants, "Second-Chance", numRequests);
+        delete ourConstants;
+        delete _Cache;
     }
     else {
         string name = "";
