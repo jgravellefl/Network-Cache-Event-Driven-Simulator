@@ -1,11 +1,18 @@
-# CIS4930Project
-Joseph Gravelle and Masen Beliveau
+# CIS4930 Project
+##### _Joseph Gravelle and Masen Beliveau_
+***
+###### Summary:
+We have created a Network Cache Event-Driven Simulator for our final project. We coded our implementation in C++ and used LRU, FIFO, and Second Chance for our cache replacement policies. You can refer to the project report for more information about the project.
+***
+###### How to run:
+In the same directory as the source code, there is a makefile used to compile the program. Run `make` in the terminal, then open the output.txt to take a look at what the simulation returns (we assume that you have c++ installed in orde to compile). It will show information on each of the cache replacement policies to give you a comparison of the three. If you would like to change the inputs, go to the inputs.txt file and alter whatever values you would like. We recommend you only change the following:
+* Pareto Shape
+* Cache Capacity
+* Number of Requests (numRequests)
+* Poisson Mean
+* Type
+For example, you can switch __pareto shape__ from 2.0 to 3.0:
 
-Summary:
-So far we have created the event class and event loop that will simulate the events, an lru cache that we will use as the first cache implementation, and a file and remote server class that we will use for file management. We used c++ as our language of choice.
+![image](images/prechangePareto.png) ![image](images/postchangePareto.png)
 
-How to run:
-We have a makefile, so just run "make" in the terminal in the project directory and the files will compile and run. You must have c++ installed to compile the code though.
-
-Thank you,
-Joseph Gravelle
+The other values can be changed, but they are based on constants recommended in the Project document, so it is advised not to change this, as this may have nonconclusive results and dramatically increase the runtime.
