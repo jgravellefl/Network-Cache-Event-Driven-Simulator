@@ -18,6 +18,10 @@ For example, you can switch __pareto shape__ from 2.0 to 3.0:
 
 The other values can be changed, but they may cause nonconclusive results and dramatically increase the runtime.
 
+If you are getting an error when running, you can try to add `-L/user/local/include` to the makefile in the second line under the compile section so that it is the following:
+
+`g++ -L/user/local/include -lgsl main.o RemoteServer.o Cache.o LRUCache.o FIFOCache.o SecondChanceCache.o Event.o Constants.o FileRequestEvent.o FileSelection.o FileArriveEvent.o FileLeaveQueueEvent.o FileEnterQueueEvent.o`
+
 ###### System Requirements:
 Requires C++ and the GNU scientific library.
 ***
