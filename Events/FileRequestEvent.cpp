@@ -31,6 +31,7 @@ int FileRequestEvent::process(Event** returnEvents){
 				this->constants->remoteServer->queuePop.insert(this->fileId);
 			}
 			else{
+				this->constants->remoteServer->waitingMap[this->fileId].push_back(this->initTime);
 				this->constants->numRequests  = this->constants->numRequests -1;
 				return 1;
 			}
@@ -50,6 +51,7 @@ int FileRequestEvent::process(Event** returnEvents){
 				this->constants->remoteServer->queuePop.insert(this->fileId);
 			}
 			else{
+				this->constants->remoteServer->waitingMap[this->fileId].push_back(this->initTime);
 				return 0;
 			}
 		}

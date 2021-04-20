@@ -5,6 +5,7 @@
 #include <set>
 #include <map>
 #include "../LRUCache/LRUCache.h"
+#include <vector>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ class RemoteServer {
 		double paretoShape;
 		double paretoScale;
 		queue<int> fifoQueue;
+		std::map<const int, vector<float> > waitingMap;
 		std::set<int> queuePop;
 
         RemoteServer(int propagationTime);
