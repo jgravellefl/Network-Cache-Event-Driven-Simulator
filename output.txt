@@ -1,117 +1,1404 @@
-Running: LRU
-final time: 4.43496e+07
-avg time: 443.496
-cache Hit Rate: 0.51165%
-cache misses: 48835
+--------------------------------------
+
+iter #: 1
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
 
 
-Running: LRU
-final time: 4.78169e+07
-avg time: 478.169
-cache Hit Rate: 0.50144%
-cache misses: 49856
+average of LRU time's: 254.669
+LRU average hit rate: 0.358167%
 
 
-Running: LRU
-final time: 4.15601e+07
-avg time: 415.601
-cache Hit Rate: 0.50919%
-cache misses: 49081
+average of FIFO time's: 264.654
+FIFO average hit rate: 0.3151%
 
 
-Running: LRU
-final time: 3.40049e+07
-avg time: 340.049
-cache Hit Rate: 0.50812%
-cache misses: 49188
+average of SecondChance time's: 252.308
+Second-Chance average hit rate: 0.364167%
 
 
-Running: LRU
-final time: 3.83572e+07
-avg time: 383.572
-cache Hit Rate: 0.51179%
-cache misses: 48821
+--------------------------------------
+
+iter #: 2
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
 
 
-average of LRU time's: 412.177
-LRU average hit rate: 0.508438%
+average of LRU time's: 283.757
+LRU average hit rate: 0.2904%
 
 
-Running: FIFO
-final time: 4.13185e+07
-avg time: 413.185
-cache Hit Rate: 0.48198%
-cache misses: 51802
+average of FIFO time's: 297.378
+FIFO average hit rate: 0.254367%
 
 
-Running: FIFO
-final time: 5.74365e+07
-avg time: 574.365
-cache Hit Rate: 0.48031%
-cache misses: 51969
+average of SecondChance time's: 279.973
+Second-Chance average hit rate: 0.3002%
 
 
-Running: FIFO
-final time: 4.10279e+07
-avg time: 410.279
-cache Hit Rate: 0.47892%
-cache misses: 52108
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
 
 
-Running: FIFO
-final time: 3.94448e+07
-avg time: 394.448
-cache Hit Rate: 0.47862%
-cache misses: 52138
+average of LRU time's: 357.201
+LRU average hit rate: 0.107867%
 
 
-Running: FIFO
-final time: 4.72338e+07
-avg time: 472.338
-cache Hit Rate: 0.48485%
-cache misses: 51515
+average of FIFO time's: 360.254
+FIFO average hit rate: 0.100233%
 
 
-average of FIFO time's: 452.923
-FIFO average hit rate: 0.480936%
+average of SecondChance time's: 351.667
+Second-Chance average hit rate: 0.1217%
 
 
-Running: Second-Chance
-final time: 4.09667e+07
-avg time: 409.667
-cache Hit Rate: 0.51585%
-cache misses: 48415
+--------------------------------------
+
+iter #: 2
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
 
 
-Running: Second-Chance
-final time: 3.90975e+07
-avg time: 390.975
-cache Hit Rate: 0.51497%
-cache misses: 48503
+average of LRU time's: 297.162
+LRU average hit rate: 0.250423%
 
 
-Running: Second-Chance
-final time: 4.87156e+07
-avg time: 487.156
-cache Hit Rate: 0.51392%
-cache misses: 48608
+average of FIFO time's: 310.262
+FIFO average hit rate: 0.20939%
 
 
-Running: Second-Chance
-final time: 3.41368e+07
-avg time: 341.368
-cache Hit Rate: 0.51736%
-cache misses: 48264
+average of SecondChance time's: 292.776
+Second-Chance average hit rate: 0.262387%
 
 
-Running: Second-Chance
-final time: 4.22734e+07
-avg time: 422.734
-cache Hit Rate: 0.5215%
-cache misses: 47850
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
 
 
-average of SecondChance time's: 410.38
-Second-Chance average hit rate: 0.51672%
+average of LRU time's: 327.524
+LRU average hit rate: 0.181067%
+
+
+average of FIFO time's: 334.84
+FIFO average hit rate: 0.16173%
+
+
+average of SecondChance time's: 323.865
+Second-Chance average hit rate: 0.190317%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 337.838
+LRU average hit rate: 0.155823%
+
+
+average of FIFO time's: 344.901
+FIFO average hit rate: 0.13818%
+
+
+average of SecondChance time's: 334.384
+Second-Chance average hit rate: 0.16447%
+
+
+--------------------------------------
+
+iter #: 2
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 231.329
+LRU average hit rate: 0.4209%
+
+
+average of FIFO time's: 242.791
+FIFO average hit rate: 0.391133%
+
+
+average of SecondChance time's: 226.167
+Second-Chance average hit rate: 0.4339%
+
+
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 214.884
+LRU average hit rate: 0.463133%
+
+
+average of FIFO time's: 225.055
+FIFO average hit rate: 0.4374%
+
+
+average of SecondChance time's: 206.808
+Second-Chance average hit rate: 0.483333%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 230.826
+LRU average hit rate: 0.423533%
+
+
+average of FIFO time's: 237.894
+FIFO average hit rate: 0.4059%
+
+
+average of SecondChance time's: 227.408
+Second-Chance average hit rate: 0.4321%
+
+
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 235.8
+LRU average hit rate: 0.410253%
+
+
+average of FIFO time's: 247.707
+FIFO average hit rate: 0.379157%
+
+
+average of SecondChance time's: 229.831
+Second-Chance average hit rate: 0.4253%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 255.308
+LRU average hit rate: 0.362467%
+
+
+average of FIFO time's: 268.745
+FIFO average hit rate: 0.328687%
+
+
+average of SecondChance time's: 250.777
+Second-Chance average hit rate: 0.37376%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 225.16
+LRU average hit rate: 0.437457%
+
+
+average of FIFO time's: 241.581
+FIFO average hit rate: 0.396413%
+
+
+average of SecondChance time's: 218.308
+Second-Chance average hit rate: 0.454577%
+
+
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 145.438
+LRU average hit rate: 0.635533%
+
+
+average of FIFO time's: 145.22
+FIFO average hit rate: 0.636333%
+
+
+average of SecondChance time's: 142.456
+Second-Chance average hit rate: 0.643433%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 157.672
+LRU average hit rate: 0.6061%
+
+
+average of FIFO time's: 157.442
+FIFO average hit rate: 0.606767%
+
+
+average of SecondChance time's: 157.757
+Second-Chance average hit rate: 0.6058%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 165.755
+LRU average hit rate: 0.586067%
+
+
+average of FIFO time's: 166.166
+FIFO average hit rate: 0.585033%
+
+
+average of SecondChance time's: 165.936
+Second-Chance average hit rate: 0.5856%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 38.6038
+LRU average hit rate: 0.903487%
+
+
+average of FIFO time's: 38.6759
+FIFO average hit rate: 0.903287%
+
+
+average of SecondChance time's: 38.6333
+Second-Chance average hit rate: 0.90337%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 37.8646
+LRU average hit rate: 0.90543%
+
+
+average of FIFO time's: 37.7801
+FIFO average hit rate: 0.905617%
+
+
+average of SecondChance time's: 37.9086
+Second-Chance average hit rate: 0.90532%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 1.25
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 36.1724
+LRU average hit rate: 0.909647%
+
+
+average of FIFO time's: 36.1111
+FIFO average hit rate: 0.9098%
+
+
+average of SecondChance time's: 36.24
+Second-Chance average hit rate: 0.909477%
+
+
+--------------------------------------
+
+iter #: 2
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 391.719
+LRU average hit rate: 0.0192333%
+
+
+average of FIFO time's: 391.808
+FIFO average hit rate: 0.0193%
+
+
+average of SecondChance time's: 391.252
+Second-Chance average hit rate: 0.0206333%
+
+
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 385.675
+LRU average hit rate: 0.0365333%
+
+
+average of FIFO time's: 387.607
+FIFO average hit rate: 0.0317667%
+
+
+average of SecondChance time's: 384.834
+Second-Chance average hit rate: 0.0387333%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 390.685
+LRU average hit rate: 0.0246%
+
+
+average of FIFO time's: 391.775
+FIFO average hit rate: 0.0218667%
+
+
+average of SecondChance time's: 389.835
+Second-Chance average hit rate: 0.0267%
+
+
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 389.81
+LRU average hit rate: 0.0233433%
+
+
+average of FIFO time's: 390.06
+FIFO average hit rate: 0.0228033%
+
+
+average of SecondChance time's: 389.536
+Second-Chance average hit rate: 0.0243333%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 389.398
+LRU average hit rate: 0.0269533%
+
+
+average of FIFO time's: 390.141
+FIFO average hit rate: 0.0251267%
+
+
+average of SecondChance time's: 389.207
+Second-Chance average hit rate: 0.0274567%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 388.967
+LRU average hit rate: 0.0281933%
+
+
+average of FIFO time's: 389.767
+FIFO average hit rate: 0.0261833%
+
+
+average of SecondChance time's: 388.78
+Second-Chance average hit rate: 0.0286367%
+
+
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 332.431
+LRU average hit rate: 0.168033%
+
+
+average of FIFO time's: 333.015
+FIFO average hit rate: 0.166567%
+
+
+average of SecondChance time's: 329.072
+Second-Chance average hit rate: 0.176933%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 330.434
+LRU average hit rate: 0.174767%
+
+
+average of FIFO time's: 335.248
+FIFO average hit rate: 0.162833%
+
+
+average of SecondChance time's: 329.388
+Second-Chance average hit rate: 0.1774%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 330.798
+LRU average hit rate: 0.1741%
+
+
+average of FIFO time's: 334.873
+FIFO average hit rate: 0.163933%
+
+
+average of SecondChance time's: 329
+Second-Chance average hit rate: 0.1786%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 327.373
+LRU average hit rate: 0.18077%
+
+
+average of FIFO time's: 332.406
+FIFO average hit rate: 0.16794%
+
+
+average of SecondChance time's: 323.903
+Second-Chance average hit rate: 0.18949%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 327.484
+LRU average hit rate: 0.181983%
+
+
+average of FIFO time's: 333.191
+FIFO average hit rate: 0.16767%
+
+
+average of SecondChance time's: 324.739
+Second-Chance average hit rate: 0.18886%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 322.206
+LRU average hit rate: 0.19495%
+
+
+average of FIFO time's: 327.439
+FIFO average hit rate: 0.18187%
+
+
+average of SecondChance time's: 319.181
+Second-Chance average hit rate: 0.202513%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 223.483
+LRU average hit rate: 0.441%
+
+
+average of FIFO time's: 222.537
+FIFO average hit rate: 0.443667%
+
+
+average of SecondChance time's: 223.761
+Second-Chance average hit rate: 0.440233%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 226.664
+LRU average hit rate: 0.433867%
+
+
+average of FIFO time's: 225.678
+FIFO average hit rate: 0.4364%
+
+
+average of SecondChance time's: 225.293
+Second-Chance average hit rate: 0.437333%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 220.711
+LRU average hit rate: 0.448933%
+
+
+average of FIFO time's: 222.211
+FIFO average hit rate: 0.4452%
+
+
+average of SecondChance time's: 222.111
+Second-Chance average hit rate: 0.445433%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 39.9995
+LRU average hit rate: 0.900013%
+
+
+average of FIFO time's: 40.0023
+FIFO average hit rate: 0.90002%
+
+
+average of SecondChance time's: 39.9888
+Second-Chance average hit rate: 0.90002%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 40.0386
+LRU average hit rate: 0.900003%
+
+
+average of FIFO time's: 40.0617
+FIFO average hit rate: 0.899953%
+
+
+average of SecondChance time's: 40.0402
+Second-Chance average hit rate: 0.900007%
+
+
+--------------------------------------
+
+iter #: 7
+paretoMean (B): 1000
+paretoShape value: 2
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 40.0046
+LRU average hit rate: 0.90011%
+
+
+average of FIFO time's: 40.0048
+FIFO average hit rate: 0.90011%
+
+
+average of SecondChance time's: 40.0106
+Second-Chance average hit rate: 0.900097%
+
+
+--------------------------------------
+
+iter #: 3
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 395.782
+LRU average hit rate: 0.0104%
+
+
+average of FIFO time's: 396.195
+FIFO average hit rate: 0.00976666%
+
+
+average of SecondChance time's: 396.17
+Second-Chance average hit rate: 0.00960002%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 396.215
+LRU average hit rate: 0.0106%
+
+
+average of FIFO time's: 396.789
+FIFO average hit rate: 0.00903332%
+
+
+average of SecondChance time's: 396.308
+Second-Chance average hit rate: 0.0103%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 396.415
+LRU average hit rate: 0.0102667%
+
+
+average of FIFO time's: 396.425
+FIFO average hit rate: 0.0102333%
+
+
+average of SecondChance time's: 396.814
+Second-Chance average hit rate: 0.00926667%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 395.703
+LRU average hit rate: 0.0101233%
+
+
+average of FIFO time's: 395.574
+FIFO average hit rate: 0.0104167%
+
+
+average of SecondChance time's: 395.815
+Second-Chance average hit rate: 0.00994666%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 396.276
+LRU average hit rate: 0.0102133%
+
+
+average of FIFO time's: 396.225
+FIFO average hit rate: 0.0103%
+
+
+average of SecondChance time's: 396.422
+Second-Chance average hit rate: 0.00983667%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 100000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 396.228
+LRU average hit rate: 0.00989%
+
+
+average of FIFO time's: 396.257
+FIFO average hit rate: 0.00982668%
+
+
+average of SecondChance time's: 396.239
+Second-Chance average hit rate: 0.00986332%
+
+
+--------------------------------------
+
+iter #: 4
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 360.991
+LRU average hit rate: 0.0977%
+
+
+average of FIFO time's: 362.125
+FIFO average hit rate: 0.0950667%
+
+
+average of SecondChance time's: 360.564
+Second-Chance average hit rate: 0.0988%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 362.986
+LRU average hit rate: 0.0936667%
+
+
+average of FIFO time's: 363.306
+FIFO average hit rate: 0.0927333%
+
+
+average of SecondChance time's: 362.291
+Second-Chance average hit rate: 0.0952667%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 361.702
+LRU average hit rate: 0.0969333%
+
+
+average of FIFO time's: 361.929
+FIFO average hit rate: 0.0963667%
+
+
+average of SecondChance time's: 361.808
+Second-Chance average hit rate: 0.0966667%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 359.143
+LRU average hit rate: 0.101747%
+
+
+average of FIFO time's: 359.525
+FIFO average hit rate: 0.10069%
+
+
+average of SecondChance time's: 358.831
+Second-Chance average hit rate: 0.10245%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 359.474
+LRU average hit rate: 0.10215%
+
+
+average of FIFO time's: 359.917
+FIFO average hit rate: 0.101067%
+
+
+average of SecondChance time's: 359.185
+Second-Chance average hit rate: 0.102907%
+
+
+--------------------------------------
+
+iter #: 7
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 1000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 359.735
+LRU average hit rate: 0.101077%
+
+
+average of FIFO time's: 359.745
+FIFO average hit rate: 0.101047%
+
+
+average of SecondChance time's: 359.676
+Second-Chance average hit rate: 0.101233%
+
+
+--------------------------------------
+
+iter #: 5
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 252.14
+LRU average hit rate: 0.369767%
+
+
+average of FIFO time's: 251.833
+FIFO average hit rate: 0.370233%
+
+
+average of SecondChance time's: 251.926
+Second-Chance average hit rate: 0.370233%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 251.533
+LRU average hit rate: 0.371867%
+
+
+average of FIFO time's: 251.706
+FIFO average hit rate: 0.3715%
+
+
+average of SecondChance time's: 251.786
+Second-Chance average hit rate: 0.371267%
+
+
+--------------------------------------
+
+iter #: 7
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 10000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 252.158
+LRU average hit rate: 0.370433%
+
+
+average of FIFO time's: 250.556
+FIFO average hit rate: 0.374433%
+
+
+average of SecondChance time's: 251.504
+Second-Chance average hit rate: 0.372067%
+
+
+--------------------------------------
+
+iter #: 6
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 30
+
+
+average of LRU time's: 40.0825
+LRU average hit rate: 0.899827%
+
+
+average of FIFO time's: 40.0985
+FIFO average hit rate: 0.899757%
+
+
+average of SecondChance time's: 40.0905
+Second-Chance average hit rate: 0.89974%
+
+
+--------------------------------------
+
+iter #: 7
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 150
+
+
+average of LRU time's: 40.0876
+LRU average hit rate: 0.899897%
+
+
+average of FIFO time's: 40.0813
+FIFO average hit rate: 0.89992%
+
+
+average of SecondChance time's: 40.0832
+Second-Chance average hit rate: 0.899897%
+
+
+--------------------------------------
+
+iter #: 8
+paretoMean (B): 1000
+paretoShape value: 8
+cacheCapacity value (B): 40000000
+numFiles: 10000
+numRequests value: 100000
+propagationTime(ms): 400
+cacheBandwidth(Mb/s): 1000
+fifoBandwidth(Mb/s): 15
+poissonMean value (ms): 500
+
+
+average of LRU time's: 40.0833
+LRU average hit rate: 0.899923%
+
+
+average of FIFO time's: 40.0918
+FIFO average hit rate: 0.8999%
+
+
+average of SecondChance time's: 40.0792
+Second-Chance average hit rate: 0.89993%
 
 
