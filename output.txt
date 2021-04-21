@@ -1,75 +1,15 @@
 Running: LRU
-final time: 2.32624e+06
-avg time: 232.624
-cache Hit Rate: 0.419%
-cache misses: 5810
-
-
-Running: LRU
-final time: 2.33352e+06
-avg time: 233.352
-cache Hit Rate: 0.4172%
-cache misses: 5828
-
-
-Running: LRU
-final time: 2.34512e+06
-avg time: 234.512
-cache Hit Rate: 0.414%
-cache misses: 5860
-
-
-average of LRU time's: 233.496
-LRU average hit rate: 0.416733%
-
+Average response time: 194.875
+Cache hit rate: 0.5135%
+Cache misses: 4865
 
 Running: FIFO
-final time: 2.3687e+06
-avg time: 236.87
-cache Hit Rate: 0.408%
-cache misses: 5920
-
-
-Running: FIFO
-final time: 2.39918e+06
-avg time: 239.918
-cache Hit Rate: 0.4004%
-cache misses: 5996
-
-
-Running: FIFO
-final time: 2.37823e+06
-avg time: 237.823
-cache Hit Rate: 0.4061%
-cache misses: 5939
-
-
-average of FIFO time's: 238.204
-FIFO average hit rate: 0.404833%
-
+Average response time: 206.382
+Cache hit rate: 0.4848%
+Cache misses: 5152
 
 Running: Second-Chance
-final time: 2.29588e+06
-avg time: 229.588
-cache Hit Rate: 0.4265%
-cache misses: 5735
-
-
-Running: Second-Chance
-final time: 2.31786e+06
-avg time: 231.786
-cache Hit Rate: 0.421%
-cache misses: 5790
-
-
-Running: Second-Chance
-final time: 2.33232e+06
-avg time: 233.232
-cache Hit Rate: 0.4174%
-cache misses: 5826
-
-
-average of SecondChance time's: 231.535
-Second-Chance average hit rate: 0.421633%
-
+Average response time: 197.52
+Cache hit rate: 0.5069%
+Cache misses: 4931
 
