@@ -19,7 +19,7 @@ RemoteServer::RemoteServer(int propagationTime, int size, double paretoShape, do
     this->propagationTime = propagationTime;
     this->currSize = size;
     this->fileMap = map<int, File*>();
-    this->waitingMap;
+    this->waitingMap = map<const int, vector<float> >();
     this->paretoScale = paretoScale;
     this->paretoShape = paretoShape;
     this->populateServer(cacheSize);

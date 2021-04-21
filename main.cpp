@@ -82,7 +82,7 @@ int main(){
     int numFiles = stoi(fileInput[3]);
     int numRequests = stoi(fileInput[4]);
     int propagationTime = stoi(fileInput[5]);
-    int initRequests = numRequests;
+    // int initRequests = numRequests;
     //multiply by 1000 to convert from Mb/s to b/ms
     int cacheBandwidth = stoi(fileInput[6]) * 1000;
     int fifoBandwidth = stoi(fileInput[7]) * 1000;
@@ -96,8 +96,6 @@ int main(){
 
 
     Cache* _Cache = NULL;
-    float avg = 0;
-    float hitRate = 0.0;
     if (cacheType.compare("ALL") == 0){
         //LRU
         _Cache = new LRUCache(cacheCapacity);

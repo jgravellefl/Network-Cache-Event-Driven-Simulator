@@ -40,7 +40,6 @@ int FileRequestEvent::process(Event** returnEvents){
 		return 2;
 	}
 	else {
-		int sampleTime = this->poissonDist(this->generator) + this->execTime;
 		if (this->constants->cache->getFile(this->fileId) != -1){
 			returnEvents[0] = new FileArriveEvent(this->initTime, this->execTime + (this->constants->remoteServer->getFile(this->fileId)/this->constants->cacheBandwidth),this->fileId ,this->constants);
 		}
